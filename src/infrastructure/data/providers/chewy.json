@@ -1,0 +1,56 @@
+{
+  "service_url": "https://service.chewy.com/messageus",
+  "biller_id": "pro_1588625900234165hLEL29hGnBbT",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[type='email']",
+          "field_default_value": null
+        },
+        {
+          "field_name": "topic",
+          "field_type": "click",
+          "field_selector": "#rn_dynamicProductCategoryInput_6_Product_Button"
+        },
+        {
+          "field_name": "selected_topic",
+          "field_type": "click",
+          "field_selector": "#ygtvcontentel5"
+        },
+        {
+          "field_name": "topic",
+          "field_type": "click",
+          "field_selector": "#rn_dynamicProductCategoryInput_7_Category_Button"
+        },
+        {
+          "field_name": "selected_topic",
+          "field_type": "click",
+          "field_selector": "#ygtvlabelel12"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "textarea[placeholder='Tell us more about how we can help']",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "button[type='submit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "p.introText",
+    "value": "We received your message.",
+    "name_suffix": "confirmation"
+  }
+}

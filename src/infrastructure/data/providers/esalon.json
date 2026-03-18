@@ -1,0 +1,58 @@
+{
+  "service_url": "https://www.esalon.com/support/contact/other-support",
+  "biller_id": "pro_1584557188336174hVtEH4z4K5zI",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "subcookiesmit",
+          "field_type": "click",
+          "field_selector": "#acceptCookies"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        },
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "#user_name_other",
+          "field_default_value": null
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#user_email_other",
+          "field_default_value": null
+        },
+        {
+          "field_name": "subject",
+          "field_type": "select",
+          "field_selector": "#issue_category_other",
+          "field_default_value": "contact_us en_us other"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#missing_order_desc_other",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "#submit-button_other"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "#support_form_response .general_form",
+    "value": "We\u2019ll respond to your request asap to ensure it gets the personal attention it deserves.",
+    "name_suffix": "confirmation"
+  }
+}

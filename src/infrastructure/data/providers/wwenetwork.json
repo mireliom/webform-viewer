@@ -1,0 +1,58 @@
+{
+  "service_url": "https://help.wwe.com/ContactUs",
+  "biller_id": "pro_15306327731341634oJYB6VhRHnf",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "email_button",
+          "field_type": "click",
+          "field_selector": "#EmailUSButton"
+        },
+        {
+          "field_name": "first_name",
+          "field_type": "type",
+          "field_selector": "#EmailUsFirstName",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "last_name",
+          "field_type": "type",
+          "field_selector": "#EmailUsLastName",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#EmailUsEmail",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#EmailUsComment",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "captcha",
+          "field_type": "captcha",
+          "field_selector": "api2/anchor?ar=1&k=6LfjRN4ZAAAAAHseWlzJjSpDY7tieQqeybna503B"
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "#EmailUsSubmit"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": ".ConfirmationModalTitle",
+    "value": "EMAIL SENT!",
+    "name_suffix": "confirmation"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "service_url": "https://support.blueapron.com/hc/en-us/requests/new",
+  "biller_id": "pro_15658923244476876QH7KccIhQmU",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#request_anonymous_requester_email",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "subject",
+          "field_type": "type",
+          "field_selector": "#request_subject",
+          "field_default_value": "Cancel Subscription"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#request_description",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reason",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_23914998",
+          "field_default_value": "webform_cancellations"
+        },
+        {
+          "field_name": "associate",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_36092247",
+          "field_default_value": "new_customer_inquiry_form"
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "footer > input[type='submit'][name='commit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div[data-test-id='notification'] > strong",
+    "value": "Your request was successfully submitted.",
+    "name_suffix": "confirmation"
+  }
+}

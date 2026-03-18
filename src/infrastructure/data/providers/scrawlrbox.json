@@ -1,0 +1,59 @@
+{
+  "service_url": "https://scrawlrbox.uk/pages/contact",
+  "biller_id": "pro_15886095665821927fBBa8yxj4lo",
+  "proxy": true,
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "input[name='contact[Name]']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 200
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[name='contact[email]']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 400
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "textarea[name='contact[Message]']",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 500
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "input[type='submit'][value='Submit']",
+          "field_default_value": ""
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "#contact_form",
+    "value": "Thank you for your submissions",
+    "name_suffix": "confirmation"
+  }
+}

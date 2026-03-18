@@ -1,0 +1,60 @@
+{
+  "service_url": "https://www.rocketlawyer.com/contact-us.rl",
+  "biller_id": "pro_15306327722626491JYkxGk7G1tV",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "first_name",
+          "field_type": "type",
+          "field_selector": "#field_FirstName",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "last_name",
+          "field_type": "type",
+          "field_selector": "#field_LastName",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#field_Email",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "subject",
+          "field_type": "select",
+          "field_selector": ".dropdown-wrap",
+          "field_default_value": "Membership Changes"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#field_custom_textarea",
+          "field_default_value": ""
+        },
+        {
+          "alternative": true,
+          "field_name": "captcha",
+          "field_type": "captcha",
+          "field_selector": "api2/anchor"
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "#leadFormSubmit"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "#leadFormSection",
+    "value": "get back to you shortly",
+    "name_suffix": "confirmation"
+  }
+}

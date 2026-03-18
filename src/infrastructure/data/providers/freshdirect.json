@@ -1,0 +1,84 @@
+{
+  "service_url": "https://www.freshdirect.com/help",
+  "biller_id": "pro_1624371749131086ztJLwj8DKq12",
+  "wss": "wss://brd-customer-hl_225f2082-zone-scraping_browser1:a2701pjii5pc@brd.superproxy.io:9222",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 3000
+        },
+        {
+          "field_name": "send_message",
+          "field_type": "click",
+          "field_selector": "[class*='Email_send_btn']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 3000
+        },
+        {
+          "field_name": "first_name",
+          "field_type": "type",
+          "field_selector": "#firstname",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "last_name",
+          "field_type": "type",
+          "field_selector": "#lastname",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#email",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "contact_phone",
+          "field_type": "type",
+          "field_selector": "#phone",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "subject_option",
+          "field_type": "click",
+          "field_selector": "#select-subject",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "subject_option_select",
+          "field_type": "click",
+          "field_selector": "li.MuiButtonBase-root.MuiMenuItem-root.MuiMenuItem-gutters[data-value='3']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#question",
+          "field_default_value": "",
+          "short_message": true
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "#modal-content-inner > div > form > button"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "[class*='ConfirmationModal_modal']",
+    "value": "Message sent!",
+    "name_suffix": "confirmation"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "service_url": "https://completenutrition.com/pages/contact-us",
+  "biller_id": "pro_16009609256421256kj5m9lXeFzx",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "#ContactFormName",
+          "field_default_value": null
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#ContactFormEmail",
+          "field_default_value": null
+        },
+        {
+          "field_name": "contact_phone",
+          "field_type": "type",
+          "field_selector": "#ContactFormPhone",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "zip_code",
+          "field_type": "type",
+          "field_selector": "#ContactFormZip",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "subject",
+          "field_type": "type",
+          "field_selector": "#ContactFormSubject",
+          "field_default_value": "Please Cancel My Subscription"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#ContactFormMessage",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "#contact_form > input[type='submit']"
+        }
+      ],
+      "closeable": [
+        {
+          "field_type": "click",
+          "field_selector": "#contact-us > div:nth-child(43) > div > div > div > div > div > div > button > svg > path"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "h4[class='page__contact-form__note form-success']",
+    "value": "Thank you for reaching out! We\u2019ll review your message and be in touch shortly",
+    "name_suffix": "confirmation"
+  }
+}

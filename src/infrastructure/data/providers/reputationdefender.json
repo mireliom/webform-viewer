@@ -1,0 +1,45 @@
+{
+  "service_url": "https://www.reputationdefender.com/contact",
+  "biller_id": "pro_16788081343421931v3txzfmI1mM",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "input[name='name']"
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[name='email']"
+        },
+        {
+          "field_name": "contact_phone",
+          "field_type": "type",
+          "field_selector": "input[name='phone']"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "textarea[name='message']",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "input[name='submit'][type='submit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div.submitMsg.success",
+    "value": "Message received",
+    "name_suffix": "confirmation"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "service_url": "https://ayuda.vix.com/hc/en-us/requests/new?ticket_form_id=4424052585101",
+  "biller_id": "pro_1722341700215847ikXqsrNWxOip",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#request_anonymous_requester_email",
+          "field_default_value": null
+        },
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "#request_custom_fields_4661722671757",
+          "field_default_value": null
+        },
+        {
+          "field_name": "country",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_4659096293517",
+          "field_default_value": "usa"
+        },
+        {
+          "field_name": "request",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_4659679488781",
+          "field_default_value": "cancelación_"
+        },
+        {
+          "field_type": "iframe2",
+          "field_selector": "#request_description_ifr",
+          "child": {
+            "field_name": "message",
+            "field_type": "message",
+            "field_selector": "#tinymce",
+            "field_default_value": ""
+          }
+        },
+        {
+          "field_name": "policy",
+          "field_type": "click",
+          "field_selector": "#request_custom_fields_4661765649037",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "footer > input[type='submit'][name='commit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "#custom-login-banner",
+    "value": "Sign in for personalized help",
+    "name_suffix": "confirmation"
+  }
+}

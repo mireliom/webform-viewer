@@ -1,0 +1,48 @@
+{
+  "service_url": "https://www.habandvipplus.com/contact-us",
+  "biller_id": "pro_1624387446226902h2lT7AIFT09I",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "first_name",
+          "field_type": "type",
+          "field_selector": "#FirstName",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "last_name",
+          "field_type": "type",
+          "field_selector": "#LastName",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#Email",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#Comments",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "button.test-contact-us-submit"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div.test-contact-us-successful",
+    "value": "message has been sent",
+    "name_suffix": "confirmation"
+  }
+}

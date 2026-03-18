@@ -1,0 +1,95 @@
+{
+  "service_url": "https://experience.regmovies.com/contact-us",
+  "biller_id": "pro_15886214551036515yz4MZ7889Xi",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "help_with",
+          "field_type": "type",
+          "field_selector": "#react-select-2-input",
+          "field_default_value": "Theatre experience, question or concern"
+        },
+        {
+          "field_name": "first_name",
+          "field_type": "type",
+          "field_selector": "input[name='firstname']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "last_name",
+          "field_type": "type",
+          "field_selector": "input[name='lastname']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[name='email']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "scroll_confirm_email",
+          "field_type": "scroll",
+          "field_selector": "input[name='confirm-email']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[name='confirm-email']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "contact_phone",
+          "field_type": "type",
+          "field_selector": "#mobile_number",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        },
+        {
+          "field_name": "rcc_member",
+          "field_type": "click",
+          "field_selector": "button[name='rcc-member']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "textarea[name='description']",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "div.contact-us > button[type='button']"
+        },
+        {
+          "alternative": true,
+          "field_name": "captcha",
+          "field_type": "captcha",
+          "field_selector": "api2/anchor"
+        }
+      ],
+      "closeable": [
+        {
+          "field_type": "click",
+          "field_selector": "button.onetrust-close-btn-handler"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "p.abv-alert-body",
+    "value": "Thank you for reaching out to us.",
+    "name_suffix": "confirmation"
+  }
+}

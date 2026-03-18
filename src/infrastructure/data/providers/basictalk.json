@@ -1,0 +1,66 @@
+{
+  "service_url": "https://support.basictalk.com/ask?contact_reason=billing_payment",
+  "biller_id": "pro_15916431654539351rQmxYS9e3gr",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "first_name",
+          "field_type": "type",
+          "field_selector": "input[placeholder='First Name *']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "last_name",
+          "field_type": "type",
+          "field_selector": "input[placeholder='Last Name *']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[placeholder='Email Address *']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "contact_phone",
+          "field_type": "type",
+          "field_selector": "input[placeholder='Phone Number *']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "subject",
+          "field_type": "type",
+          "field_selector": "input[placeholder='Subject *']",
+          "field_default_value": "Cancel Membership"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "textarea[placeholder='Question *']",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "alternative": true,
+          "field_name": "captcha",
+          "field_type": "2captcha",
+          "field_selector": ""
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "input[value='Continue']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "#PageTitle",
+    "value": "Your question has been submitted.",
+    "name_suffix": "confirmation"
+  }
+}

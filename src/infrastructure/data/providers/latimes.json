@@ -1,0 +1,77 @@
+{
+  "service_url": "https://membership.latimes.com/contact-us",
+  "biller_id": "pro_15306327715347352y9AZ1cAC3oY",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "first_name",
+          "field_type": "type",
+          "field_selector": "input[data-testid='FirstName']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "last_name",
+          "field_type": "type",
+          "field_selector": "input[data-testid='LastName']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[data-testid='Email']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "contact_phone",
+          "field_type": "type",
+          "field_selector": "input[data-testid='Phone']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "address",
+          "field_type": "type",
+          "field_selector": "input[data-testid='StreetAddress']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "zip_code",
+          "field_type": "type",
+          "field_selector": "input[data-testid='ZipCode']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "category",
+          "field_type": "select",
+          "field_selector": "select[data-testid='Category']",
+          "field_default_value": "Cancel your subscription"
+        },
+        {
+          "field_name": "comments",
+          "field_type": "message",
+          "field_selector": "textarea[data-testid='Comments']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "button[data-testid='Submit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "#show_success_message",
+    "value": "successfully submitted",
+    "name_suffix": "confirmation"
+  }
+}

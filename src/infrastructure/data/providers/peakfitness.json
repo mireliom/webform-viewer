@@ -1,0 +1,47 @@
+{
+  "service_url": "https://peakfitnessri.com/contact-us",
+  "biller_id": "pro_16788048221291301s55ubQPZFMX",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "input[data-aid='CONTACT_FORM_NAME']"
+        },
+        {
+          "field_name": "contact_phone",
+          "field_type": "type",
+          "field_selector": "input[data-aid='CONTACT_FORM_PHONE']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[data-aid='CONTACT_FORM_EMAIL']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "textarea[data-aid='CONTACT_FORM_MESSAGE']",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "button[data-aid='CONTACT_SUBMIT_BUTTON_REND']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div[data-aid='CONTACT_FORM_SUBMIT_SUCCESS_MESSAGE']",
+    "value": "Thank you for your inquiry",
+    "name_suffix": "confirmation"
+  }
+}

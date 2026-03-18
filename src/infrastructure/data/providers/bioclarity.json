@@ -1,0 +1,68 @@
+{
+  "service_url": "https://www.bioclarity.com/pages/help",
+  "biller_id": "pro_15916433933496013Y5UQktgELdp",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_type": "iframe2",
+          "field_selector": "#attentive_creative",
+          "alternative": true,
+          "child": {
+            "alternative": true,
+            "field_type": "click",
+            "field_selector": "#closeIconContainer"
+          }
+        },
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "#ContactFormName",
+          "field_default_value": null
+        },
+        {
+          "field_type": "iframe2",
+          "field_selector": "#attentive_creative",
+          "alternative": true,
+          "child": {
+            "alternative": true,
+            "field_type": "click",
+            "field_selector": "#closeIconContainer"
+          }
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#ContactFormEmail",
+          "field_default_value": null
+        },
+        {
+          "field_name": "contact_phone",
+          "field_type": "type",
+          "field_selector": "#ContactFormPhone",
+          "field_default_value": null
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#ContactFormMessage",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "#contact_form > button[type='submit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": ".form-success",
+    "value": "Thanks for contacting us.",
+    "name_suffix": "confirmation"
+  }
+}

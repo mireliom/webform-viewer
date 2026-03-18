@@ -1,0 +1,48 @@
+{
+  "service_url": "https://support.babbel.com/hc/en-us/requests/new",
+  "biller_id": "pro_1568656661934541twiJsCW5Ue9E",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "submit_request",
+          "field_type": "select",
+          "field_selector": "#request_issue_type_select",
+          "field_default_value": "360001773632"
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#request_anonymous_requester_email",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "subject",
+          "field_type": "type",
+          "field_selector": "#request_subject",
+          "field_default_value": "Cancel Subscription"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#request_description",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "footer > input[type='submit'][name='commit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div[data-test-id='notification'] > strong",
+    "value": "Your request was successfully submitted.",
+    "name_suffix": "confirmation"
+  }
+}

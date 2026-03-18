@@ -1,0 +1,47 @@
+{
+  "service_url": "https://www.everlance.com/contact-us",
+  "biller_id": "pro_17219353065844307LHCrsXrqjqJ",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "first_name",
+          "field_type": "type",
+          "field_selector": "input[name='firstname']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "last_name",
+          "field_type": "type",
+          "field_selector": "input[name='lastname']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[name='email']"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "textarea[name='general_inquiry']",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "div.actions > button.hs-button.primary.large"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div.submitted-message hs-main-font-element",
+    "value": "The Everlance team will be in touch shortly",
+    "name_suffix": "confirmation"
+  }
+}

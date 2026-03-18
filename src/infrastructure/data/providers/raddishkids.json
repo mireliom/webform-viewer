@@ -1,0 +1,50 @@
+{
+  "service_url": "https://raddishkids.zendesk.com/hc/en-us/requests/new",
+  "wss": "wss://brd-customer-hl_225f2082-zone-scraping_browser1:a2701pjii5pc@brd.superproxy.io:9222",
+  "biller_id": "pro_15886216808007002T4p6tTPLofs",
+  "proxy": true,
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#request_anonymous_requester_email",
+          "field_default_value": null
+        },
+        {
+          "field_name": "first_name",
+          "field_type": "type",
+          "field_selector": "#request_custom_fields_81031387",
+          "field_default_value": null
+        },
+        {
+          "field_name": "last_name",
+          "field_type": "type",
+          "field_selector": "#request_custom_fields_81425348",
+          "field_default_value": null
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#request_description",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "footer > input[type='submit'][name='commit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div[data-test-id='notification'] > strong",
+    "value": "Your request was successfully submitted.",
+    "name_suffix": "confirmation"
+  }
+}

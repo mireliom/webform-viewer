@@ -1,0 +1,67 @@
+{
+  "service_url": "https://www.cougarlife.com/app/public/contactform.p?contactform=1",
+  "biller_id": "pro_16787092830591354CgrETwhB7GP",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "subject",
+          "field_type": "click",
+          "field_selector": "span.filter-option.pull-left"
+        },
+        {
+          "field_name": "subject2",
+          "field_type": "select",
+          "field_selector": "#select-category",
+          "field_default_value": "1"
+        },
+        {
+          "field_name": "subject",
+          "field_type": "click",
+          "field_selector": "span.filter-option.pull-left"
+        },
+        {
+          "field_name": "report",
+          "field_type": "click",
+          "field_selector": "#sub-category > div > button > span.filter-option.pull-left"
+        },
+        {
+          "field_name": "report2",
+          "field_type": "click",
+          "field_selector": "#sub-category > div > div > ul > li:nth-child(6) > a > span.text"
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#contactForm > div > input",
+          "field_default_value": null
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "div.inputMessage > textarea",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "#contactForm > p > button"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "#container > h1",
+    "value": "Thank You!",
+    "name_suffix": "confirmation"
+  }
+}

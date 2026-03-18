@@ -1,0 +1,54 @@
+{
+  "service_url": "https://www.onlinechatcity.com/contact",
+  "biller_id": "pro_16788033657042363DI6GWLFKEMS",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "contact_topic",
+          "field_type": "select",
+          "field_selector": "#contact_topic",
+          "field_default_value": "100"
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#contact_email",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "subject",
+          "field_type": "type",
+          "field_selector": "#contact_subject",
+          "field_default_value": "Cancel Subscription"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#contact_msg",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "captcha",
+          "field_type": "img_captcha",
+          "src_selector": "#securityKeySplit",
+          "field_selector": "#contact_security_key"
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "#contact_submit"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "#content",
+    "value": "Thank you for your question",
+    "name_suffix": "confirmation"
+  }
+}

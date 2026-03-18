@@ -1,0 +1,65 @@
+{
+  "service_url": "https://www.scentbox.com/pages/contact.cfm",
+  "biller_id": "pro_15845560782027457hu8yW55jbMw",
+  "pages": [
+    {
+      "fields": [
+        {
+          "alternative": true,
+          "field_name": "popup",
+          "field_type": "click",
+          "field_selector": "button.needsclick[aria-label='Close dialog']"
+        },
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "#exampleInputName",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#exampleInputEmail",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "subject",
+          "field_type": "type",
+          "field_selector": "#exampleInputSubject",
+          "field_default_value": "Cancel Subscription"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#exampleInputMessage",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "scroll_submit",
+          "field_type": "scroll",
+          "field_selector": "input[type='submit'][name='submit_contact']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "input[type='submit'][name='submit_contact']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div.alert.alert-success",
+    "value": "received your message",
+    "name_suffix": "confirmation"
+  }
+}

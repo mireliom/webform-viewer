@@ -1,0 +1,117 @@
+{
+  "service_url": "https://help.delighted.com/",
+  "biller_id": "pro_160148964479051548h2FiGB8W0x",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "contact",
+          "field_type": "click",
+          "field_selector": "a.contactUs",
+          "field_default_value": null
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        },
+        {
+          "alternative": true,
+          "field_name": "cookies",
+          "field_type": "click",
+          "field_selector": "#truste-consent-button",
+          "field_default_value": null
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "full_name",
+            "field_type": "type",
+            "field_selector": "input[name='name']",
+            "field_default_value": null
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "subject",
+            "field_type": "type",
+            "field_selector": "input[name='subject']",
+            "field_default_value": "Cancel Subscription"
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "reply_to",
+            "field_type": "type",
+            "field_selector": "input[name='email']",
+            "field_default_value": null
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "message",
+            "field_type": "message",
+            "field_selector": "textarea[type='text']",
+            "field_default_value": ""
+          }
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 1000
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "submit",
+            "field_type": "click",
+            "field_selector": "button.c-AskContactForm__submitButton"
+          }
+        },
+        {
+          "field_type": "iframe",
+          "alternative": true,
+          "child": {
+            "alternative": true,
+            "field_name": "submit",
+            "field_type": "click",
+            "field_selector": "button.c-AskContactForm__submitButton"
+          }
+        },
+        {
+          "field_type": "iframe",
+          "alternative": true,
+          "child": {
+            "alternative": true,
+            "field_name": "submit",
+            "field_type": "click",
+            "field_selector": "button.c-AskContactForm__submitButton"
+          }
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "iframe_selector": "undefined",
+    "selector": "#beacon-container",
+    "value": "receive an email reply within a few hours",
+    "name_suffix": "confirmation"
+  }
+}

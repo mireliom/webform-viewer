@@ -1,0 +1,59 @@
+{
+  "service_url": "https://support.dribbble.com/hc/en-us/requests/new?ticket_form_id=360006221513",
+  "biller_id": "pro_17271022441443064eKl6TY0jcrf",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#request_anonymous_requester_email",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "first_name",
+          "field_type": "type",
+          "field_selector": "#request_custom_fields_360054977294",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "username",
+          "field_type": "type",
+          "field_selector": "#request_custom_fields_360056133733",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "subject",
+          "field_type": "type",
+          "field_selector": "#request_subject",
+          "field_default_value": "Cancel Subscription"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#request_description",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "footer > input[type='submit'][name='commit']"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "#zd-abm-feedback-no"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div[data-test-id='notification'] > strong",
+    "value": "Your request was successfully submitted.",
+    "name_suffix": "confirmation"
+  }
+}

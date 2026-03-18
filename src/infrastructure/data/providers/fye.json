@@ -1,0 +1,52 @@
+{
+  "service_url": "https://www.fye.com/contactus",
+  "biller_id": "pro_15306327712664368NuThRmHqEJs",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "#dwfrm_contactus_name"
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#dwfrm_contactus_email"
+        },
+        {
+          "field_name": "question",
+          "field_type": "select",
+          "field_selector": "#dwfrm_contactus_myquestion",
+          "field_default_value": "Billing or payment issues"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#dwfrm_contactus_comment",
+          "field_default_value": ""
+        },
+        {
+          "alternative": true,
+          "field_name": "captcha",
+          "field_type": "2captcha",
+          "field_selector": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "#sendBtn"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "#primary > section > div > div.content-asset",
+    "value": "Thanks for writing. We'll get back to you within two business days",
+    "name_suffix": "confirmation"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "service_url": "https://chwinery.com/contact/contact-us",
+  "biller_id": "pro_16057319744281921VAjY7GUEiCY",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "first_name",
+          "field_type": "type",
+          "field_selector": "#form-input-firstName",
+          "field_default_value": null
+        },
+        {
+          "field_name": "last_name",
+          "field_type": "type",
+          "field_selector": "#form-input-lastName",
+          "field_default_value": null
+        },
+        {
+          "field_name": "contact_option",
+          "field_type": "select",
+          "field_selector": "#form-input-contactOptions",
+          "field_default_value": "2"
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#form-input-email",
+          "field_default_value": null
+        },
+        {
+          "field_name": "contact_phone",
+          "field_type": "type",
+          "field_selector": "#form-input-phone",
+          "field_default_value": null
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#form-input-message",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "button[type='submit'][name='form_page_submit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "p[class='form-confirmation__header']",
+    "value": "THANK YOU",
+    "name_suffix": "confirmation"
+  }
+}

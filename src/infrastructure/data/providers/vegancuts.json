@@ -1,0 +1,42 @@
+{
+  "service_url": "https://vegancuts.zendesk.com/hc/en-us/requests/new",
+  "biller_id": "pro_15886104379590716nCwwtFyNP9P",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#request_anonymous_requester_email",
+          "field_default_value": null
+        },
+        {
+          "field_name": "reason",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_10822058053524",
+          "field_default_value": "cancellation_regularorderssubscription"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#request_description",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "footer > input[type='submit'][name='commit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "strong",
+    "value": "Your request was successfully submitted.",
+    "name_suffix": "confirmation"
+  }
+}

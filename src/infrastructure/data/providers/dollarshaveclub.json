@@ -1,0 +1,77 @@
+{
+  "service_url": "https://ca-help.dollarshaveclub.com/en-US/contact",
+  "wss": "wss://brd-customer-hl_225f2082-zone-scraping_browser1:a2701pjii5pc@brd.superproxy.io:9222",
+  "biller_id": "pro_15197482879909217S4Wjg8qwCSB",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "input[name='name']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[name='email'][type='email']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "subject",
+          "field_type": "click",
+          "field_selector": "button[data-testid='dropdown-toggle']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "subject_option",
+          "field_type": "click",
+          "field_selector": "button[role='menuitem']:nth-child(5)",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "other_subject",
+          "field_type": "type",
+          "field_selector": "input[name='other_subject']",
+          "field_default_value": "Cancel my subscription"
+        },
+        {
+          "field_name": "comments",
+          "field_type": "message",
+          "field_selector": "textarea[name='message']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "scroll_submit",
+          "field_type": "scroll",
+          "field_selector": "button.btn-secondary[type='submit']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "button.btn-secondary[type='submit']"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div.ghc-main-wrapper ",
+    "value": "Your request was sent!",
+    "name_suffix": "confirmation"
+  }
+}

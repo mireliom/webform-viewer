@@ -1,0 +1,66 @@
+{
+  "service_url": "https://support.abcmouse.com/hc/en-us/requests/new",
+  "wss": "wss://brd-customer-hl_225f2082-zone-scraping_browser1:a2701pjii5pc@brd.superproxy.io:9222",
+  "biller_id": "pro_15845561598349016S5EetNhZR07",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#request_anonymous_requester_email",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "plan",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_34683987017879",
+          "field_default_value": "abcmouse1"
+        },
+        {
+          "field_name": "subject",
+          "field_type": "type",
+          "field_selector": "#request_subject",
+          "field_default_value": "Cancel Subscription, Please"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#request_description",
+          "field_default_value": "Cancel Subscription, Please"
+        },
+        {
+          "alternative": true,
+          "field_name": "contact",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_360040949513",
+          "field_default_value": "cancel_my_account"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "footer > input[type='submit'][name='commit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div[data-test-id='notification'] > strong",
+    "value": "Your request was successfully submitted.",
+    "name_suffix": "confirmation"
+  }
+}

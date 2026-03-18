@@ -1,0 +1,50 @@
+{
+  "service_url": "https://support.surfshark.com/hc/en-us/requests/new",
+  "biller_id": "pro_15886096138419292QbnpApuJXWh",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "topic",
+          "field_type": "click",
+          "field_selector": "a.card[href='#/billing']"
+        },
+        {
+          "field_name": "topic",
+          "field_type": "click",
+          "field_selector": "a.article-link:nth-child(1)"
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#request_anonymous_requester_email"
+        }, {
+          "field_name": "subject",
+          "field_type": "type",
+          "field_selector": "#request_subject",
+          "field_default_value": "Cancel Subscription"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector":  "#request_description",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "footer > input[type='submit'][name='commit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div[data-test-id='notification'] > strong",
+    "value": "Your request was successfully submitted.",
+    "name_suffix": "confirmation"
+  }
+}

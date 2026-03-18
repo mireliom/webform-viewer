@@ -1,0 +1,56 @@
+{
+  "service_url": "https://www.directbuy.com/contact/",
+  "biller_id": "pro_16787113331003397brqlrGZUSkG",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "first_name",
+          "field_type": "type",
+          "field_selector": "#input-first-name"
+        },
+        {
+          "field_name": "last_name",
+          "field_type": "type",
+          "field_selector": "#input-last-name"
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#input-email"
+        },
+        {
+          "field_name": "contact_phone",
+          "field_type": "type",
+          "field_selector": "#input-phone"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#input-message",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "topic",
+          "field_type": "select",
+          "field_selector": "#area-of-interest",
+          "field_default_value": "Existing Member Support"
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "button.btn.serenity[type='submit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div.page-header",
+    "value": "We Have Received Your Inquiry",
+    "name_suffix": "confirmation"
+  }
+}

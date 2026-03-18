@@ -1,0 +1,66 @@
+{
+  "service_url": "https://support.dailywire.com/hc/en-us/requests/new",
+  "biller_id": "pro_17222745443490850ieG98HeRw9W",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#request_anonymous_requester_email",
+          "field_default_value": null
+        },
+        {
+          "field_name": "help",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_5295679166611",
+          "field_default_value": "subscriptions"
+        },
+        {
+          "field_name": "updates",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_6292942973331",
+          "field_default_value": "sub_upgrade/downgrade"
+        },
+        {
+          "field_name": "level",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_5294654317459",
+          "field_default_value": "all_access"
+        },
+        {
+          "field_name": "subject",
+          "field_type": "type",
+          "field_selector": "#request_subject",
+          "field_default_value": "Cancel Subscription"
+        },
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "#request_custom_fields_15678040145939",
+          "field_default_value": null
+        },
+        {
+          "field_name": "comments",
+          "field_type": "rich_text_editor",
+          "field_selector": "div[role='textbox']",
+          "field_default_value": "message"
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "footer > input[type='submit'][name='commit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div[data-test-id='notification'] > strong",
+    "value": "Your request was successfully submitted.",
+    "name_suffix": "confirmation"
+  }
+}

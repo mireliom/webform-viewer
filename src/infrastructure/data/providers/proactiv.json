@@ -1,0 +1,101 @@
+{
+  "service_url": "https://www.proactiv.com/contact-us",
+  "biller_id": "pro_15306327721959217JamSzhr1A6x",
+  "wss": "wss://brd-customer-hl_225f2082-zone-scraping_browser1:a2701pjii5pc@brd.superproxy.io:9222",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 10000
+        },
+        {
+          "field_name": "popup",
+          "field_type": "click_basic",
+          "field_selector": "button.alia-style-button-plain"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        },
+        {
+          "field_name": "form",
+          "field_type": "click",
+          "field_selector": "[href='#contact-form-section']"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        },
+        {
+          "field_name": "inquiry",
+          "field_type": "click",
+          "field_selector": "[aria-controls='custom#inquiry_type-selector-dropdown']"
+        },
+        {
+          "field_name": "inquiry",
+          "field_type": "click",
+          "field_selector": "[id='select-custom#inquiry_type-Cancel Subscription']"
+        },
+        {
+          "field_name": "first_name",
+          "field_type": "type",
+          "field_selector": "#first_name",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "last_name",
+          "field_type": "type",
+          "field_selector": "#last_name",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#email",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "order_number",
+          "field_type": "type",
+          "field_selector": "[id='custom#order_number']",
+          "field_default_value": "N/A"
+        },
+        {
+          "field_name": "contact_phone",
+          "field_type": "type",
+          "field_selector": "#phone_number",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "[name='custom#message']",
+          "field_default_value": "Hi, i want to cancel my subscription"
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "[data-testid='btn-form-submit']"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 15000
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "[data-testid='banner-success'] > h2",
+    "value": "Thank You for contacting Proactiv",
+    "name_suffix": "confirmation"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "service_url": "https://support.deezer.com/hc/en-gb/requests/new",
+  "biller_id": "pro_15845570514566793WTaykKZcxeM",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "issue",
+          "field_type": "select",
+          "field_selector": "#request_issue_type_select",
+          "field_default_value": "360000058305"
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#request_anonymous_requester_email",
+          "field_default_value": null
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 500
+        },
+        {
+          "field_name": "request",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_360000314665",
+          "field_default_value": "__dc.cancellation_reason_field_7__"
+        },
+        {
+          "field_name": "subject",
+          "field_type": "type",
+          "field_selector": "#request_subject",
+          "field_default_value": "Cancel Subscription"
+        },
+        {
+          "field_type": "iframe2",
+          "field_selector": "#request_description_ifr",
+          "child": {
+            "field_name": "message",
+            "field_type": "message",
+            "field_selector": "#tinymce",
+            "field_default_value": ""
+          }
+        },
+        {
+          "field_name": "subscription",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_28824549",
+          "field_default_value": "unknown"
+        },
+        {
+          "field_name": "country",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_25327731",
+          "field_default_value": "country_us"
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "footer > input[type='submit'][name='commit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div[data-test-id='notification']",
+    "value": "Your request was successfully submitted.",
+    "name_suffix": "confirmation"
+  }
+}

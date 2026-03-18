@@ -1,0 +1,93 @@
+{
+  "service_url": "https://support.carbonite.com/contact-us/#ContactMethods",
+  "biller_id": "pro_15686566899547067EfOU2Oo8P8G",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        },
+        {
+          "field_required": false,
+          "field_name": "email_accordion",
+          "field_type": "click",
+          "field_selector": "div[id='EmailAccordion'][aria-expanded='false']"
+        },
+        {
+          "field_name": "first_name",
+          "field_type": "type",
+          "field_selector": "input[name='firstName']"
+        },
+        {
+          "field_name": "last_name",
+          "field_type": "type",
+          "field_selector": "input[name='lastName']"
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#caseEmail"
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#caseEmailVal"
+        },
+        {
+          "field_name": "contact_phone",
+          "field_type": "type",
+          "field_selector": "input[name='phone']"
+        },
+        {
+          "field_name": "topic",
+          "field_type": "select",
+          "field_selector": "#emailProduct",
+          "field_default_value": "Pro"
+        },
+        {
+          "field_name": "topic",
+          "field_type": "select",
+          "field_selector": "#topicSelect",
+          "field_default_value": "Billing & Account"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#emailQuestion",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "#caseSubmit"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 1000
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "div.modal-footer > button[class='btn kb-btn-cancel left case-submit-initial-button']"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "#case-submit-header",
+    "value": "Successfully submitted case",
+    "name_suffix": "confirmation"
+  }
+}

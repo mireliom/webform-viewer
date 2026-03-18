@@ -1,0 +1,67 @@
+{
+  "service_url": "https://support.homechef.com/hc/en-us/requests/new",
+  "biller_id": "pro_15658925567766538jwaSyurCIe2",
+  "proxy": true,
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#request_anonymous_requester_email",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "first_name",
+          "field_type": "type",
+          "field_selector": "#request_custom_fields_24328283",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "last_name",
+          "field_type": "type",
+          "field_selector": "#request_custom_fields_24371286",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "same_email",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_24841686",
+          "field_default_value": "not_account_email"
+        },
+        {
+          "field_name": "request_option",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_24361356",
+          "field_default_value": "deactivating_my_subscription"
+        },
+        {
+          "field_name": "subject",
+          "field_type": "type",
+          "field_selector": "#request_subject",
+          "field_default_value": "Please cancel my paid subscription"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#request_description",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "footer > input[type='submit'][name='commit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div[data-test-id='notification'] > strong",
+    "value": "Your request was successfully submitted.",
+    "name_suffix": "confirmation"
+  }
+}

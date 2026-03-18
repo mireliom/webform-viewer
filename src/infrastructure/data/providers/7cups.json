@@ -1,0 +1,54 @@
+{
+  "service_url": "https://help.7cups.com/hc/en-us/requests/new?ticket_form_id=360002054494",
+  "biller_id": "pro_17229514707173202kpaYqH8DKoD",
+  "proxy": true,
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[name='request[anonymous_requester_email]']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "subject",
+          "field_type": "type",
+          "field_selector": "input[name='request[subject]']",
+          "field_default_value": "Cancel Subscription"
+        },
+        {
+          "field_name": "comments",
+          "field_type": "rich_text_editor",
+          "field_selector": "div[role='textbox']",
+          "field_default_value": "message"
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "button[type='submit'][data-garden-id='buttons.button']"
+        },
+        {
+          "alternative": true,
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "button[type='submit'][data-garden-id='buttons.button']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div[data-test-id='notification'] > strong",
+    "value": "Your request was successfully submitted.",
+    "name_suffix": "confirmation"
+  }
+}

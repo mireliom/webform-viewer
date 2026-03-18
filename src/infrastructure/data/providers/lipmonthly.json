@@ -1,0 +1,68 @@
+{
+  "service_url": "https://www.lipmonthly.com/pages/contact-us",
+  "biller_id": "pro_158455516886068083vAhDR0xsHv",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "#contactFormName",
+          "field_default_value": "360001075652"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 1000
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#contactFormEmail",
+          "field_default_value": null
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#contactFormMessage ",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "#contact_form > input[type=submit]"
+        }
+      ],
+      "closeable": [
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        },
+        {
+          "field_type": "click",
+          "field_selector": "button[class='needsclick klaviyo-close-form kl-private-reset-css-Xuajs1']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": ".quote",
+    "value": "Thanks for contacting us. We'll get back to you as soon as possible.",
+    "name_suffix": "confirmation"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "service_url": "https://digitaldjpool.com/home/contact",
+  "biller_id": "pro_16014901444876175ffYEeBpwCLv",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "#Name",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#Email",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "subject",
+          "field_type": "select",
+          "field_selector": "#Subject",
+          "field_default_value": "cancel"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#Message",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "captcha",
+          "field_type": "captcha",
+          "field_selector": "api2/anchor?ar=1&k=6LeoeSkTAAAAAA9rkZs5oS82l69OEYjKRZAiKdaF"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "button[type='submit'][class='djp-btn']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div[class='card-panel functional-green white-text']",
+    "value": "Thank you, your message has been sent. We will get back to you shortly.",
+    "name_suffix": "confirmation"
+  }
+}

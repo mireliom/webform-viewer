@@ -1,0 +1,104 @@
+{
+  "service_url": "https://japancrate.com/pages/contact",
+  "biller_id": "pro_1605645664624268CHjL7fFjDdIl",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "win_this",
+            "field_type": "click",
+            "field_selector": "div[role='button'] > article"
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+
+            "field_name": "full_name",
+            "field_type": "type",
+            "field_selector": "#fullName"
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "reply_to",
+            "field_type": "type",
+            "field_selector": "#email"
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "subject",
+            "field_type": "scroll",
+            "field_selector": "button[type='submit']",
+            "field_default_value": ""
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "subject",
+            "field_type": "click",
+            "field_selector": "button[type='button'][data-testid='dropdown-toggle']",
+            "field_default_value": ""
+          }
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 3000
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "subject-value",
+            "field_type": "click",
+            "field_selector": "#__next > div > div:nth-child(1) > div > div.ghc-contact-form.css-13stniq.e1qubwr115 > div > div.css-ekyqmx.e1qubwr112 > div:nth-child(3) > div > div > button:nth-child(7)"
+          }
+        },
+
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "message",
+            "field_type": "message",
+            "field_selector": "#message",
+            "field_default_value": ""
+          }
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "submit",
+            "field_type": "click",
+            "field_selector": "button[type='submit']"
+          }
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "iframe_selector": "undefined",
+    "selector": "div.ghc-success-page",
+    "value": "Your request was sent",
+    "name_suffix": "confirmation"
+  }
+}

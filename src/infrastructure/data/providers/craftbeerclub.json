@@ -1,0 +1,55 @@
+{
+  "service_url": "https://craftbeerclub.com/pages/contact",
+  "wss": "wss://brd-customer-hl_225f2082-zone-scraping_browser1:a2701pjii5pc@brd.superproxy.io:9222",
+  "biller_id": "pro_16233453233763874RC8zl1Fh82q",
+  "proxy": true,
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "#ContactFormName",
+          "field_default_value": null
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#ContactFormEmail",
+          "field_default_value": null
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#ContactFormMessage",
+          "field_default_value": "Cancel my subscription"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "input[type='submit'][value='Send']"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        },
+        {
+          "field_required": false,
+          "field_name": "captcha",
+          "field_type": "2captcha",
+          "api_key": "39a8d75fc073945fcebed53a95085120"
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "p.form-success",
+    "value": "Thanks for contacting us. We'll get back to you as soon as possible.",
+    "name_suffix": "confirmation"
+  }
+}

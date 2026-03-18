@@ -1,0 +1,43 @@
+{
+  "service_url": "https://www.brickloot.com/pages/contact-us",
+  "biller_id": "pro_15686567256344614aOt8D7k6w7A",
+  "proxy": true,
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "input[name='contact[name]']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[name='contact[email]']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "textarea[name='contact[body]']",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "div.justify-self-start > button[type='submit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div.banner--success",
+    "value": "Your message has been sent",
+    "name_suffix": "confirmation"
+  }
+}

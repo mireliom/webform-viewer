@@ -1,0 +1,65 @@
+{
+  "service_url": "https://theladders.zendesk.com/hc/en-us/requests/new",
+  "biller_id": "pro_153063277160031948pvRBgVg9y0",
+  "proxy": true,
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#request_anonymous_requester_email",
+          "field_default_value": null
+        },
+        {
+          "field_name": "first_name",
+          "field_type": "type",
+          "field_selector": "#request_custom_fields_360006483152"
+        },
+        {
+          "field_name": "last_name",
+          "field_type": "type",
+          "field_selector": "#request_custom_fields_360006502051"
+        },
+        {
+          "field_name": "reason",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_360006483132",
+          "field_default_value": "cancellation_request"
+        },
+        {
+          "field_name": "subject",
+          "field_type": "type",
+          "field_selector": "#request_subject",
+          "field_default_value": "Cancel Subscription"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#request_description",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "contact_phone",
+          "field_type": "type",
+          "field_selector": "#request_custom_fields_360006483172",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "footer > input[type='submit'][name='commit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "strong",
+    "value": "Your request was successfully submitted.",
+    "name_suffix": "confirmation"
+  }
+}

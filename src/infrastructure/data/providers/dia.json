@@ -1,0 +1,66 @@
+{
+  "service_url": "https://support.dia.com/hc/en-us/requests/new",
+  "wss": "wss://brd-customer-hl_225f2082-zone-scraping_browser1:a2701pjii5pc@brd.superproxy.io:9222",
+  "biller_id": "pro_15886154435413558JASEGXyzlcl",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "issue",
+          "field_type": "select",
+          "field_selector": "#request_issue_type_select",
+          "field_default_value": "360000521734"
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#request_anonymous_requester_email",
+          "field_default_value": null
+        },
+        {
+          "field_name": "subject",
+          "field_type": "type",
+          "field_selector": "#request_subject",
+          "field_default_value": "Cancel Subscription"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#request_description",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "order",
+          "field_type": "type",
+          "field_selector": "#request_custom_fields_33190308",
+          "field_default_value": "111"
+        },
+        {
+          "field_name": "issue",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_360013257494",
+          "field_default_value": "i_need_to_cancel_my_dia_box."
+        }, {
+          "field_name": "reason",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_360013948653",
+          "field_default_value": "the_service_was_not_what_i_thought/expected."
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "footer > input[type='submit'][name='commit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div[data-test-id='notification']",
+    "value": "Your request was successfully submitted.",
+    "name_suffix": "confirmation"
+  }
+}

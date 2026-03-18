@@ -1,0 +1,93 @@
+{
+  "service_url": "https://help.fox.com/fox/s/support-form",
+  "biller_id": "pro_17223425378062477BWU5kv5g1ft",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "first_name",
+          "field_type": "type",
+          "selector_type": "xpath",
+          "field_selector": "//*[@name='First_Name__c']"
+        },
+        {
+          "field_name": "last_name",
+          "field_type": "type",
+          "selector_type": "xpath",
+          "field_selector": "//*[@name='Last_Name__c']"
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "selector_type": "xpath",
+          "field_selector": "//*[@name='SuppliedEmail']"
+        },
+        {
+          "field_name": "category",
+          "field_type": "click",
+          "selector_type": "xpath",
+          "field_selector": "//*[@name='Branded_Application__c']"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 1000
+        },
+        {
+          "field_name": "category_value",
+          "field_type": "click",
+          "selector_type": "xpath",
+          "field_selector": "//*[@data-value='Fox Nation']"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 1000
+        },
+        {
+          "field_name": "sub_category",
+          "field_type": "click",
+          "selector_type": "xpath",
+          "field_selector": "//*[@name='Topic__c']"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 1000
+        },
+        {
+          "field_name": "sub_category_value",
+          "field_type": "click",
+          "selector_type": "xpath",
+          "field_selector": "//*[@data-value='Cancel Service']"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 1000
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "selector_type": "xpath",
+          "field_selector": "//*[@name='Description']",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "button.submitBtn"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "span.toastMessage",
+    "value": "Support Request was successfully created",
+    "name_suffix": "confirmation"
+  }
+}

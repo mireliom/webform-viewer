@@ -1,0 +1,58 @@
+{
+  "service_url": "https://help.jpeoplemeet.com/hc/en-us/requests/new",
+  "biller_id": "pro_16787238240436404g7kiIrvDOsD",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#request_anonymous_requester_email",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "contact_phone",
+          "field_type": "type",
+          "field_selector": "#request_custom_fields_5875301730971",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "#request_custom_fields_5875341354523",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "zip_code",
+          "field_type": "type",
+          "field_selector": "#request_custom_fields_5875371176731",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "iframe2",
+          "field_selector": "#request_description_ifr",
+          "child": {
+            "field_name": "message",
+            "field_type": "message",
+            "field_selector": "#tinymce",
+            "field_default_value": ""
+          }
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "footer > input[type='submit'][name='commit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div[data-test-id='notification'] > strong",
+    "value": "Your request was successfully submitted.",
+    "name_suffix": "confirmation"
+  }
+}

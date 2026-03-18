@@ -1,0 +1,97 @@
+{
+  "service_url": "https://www.theketobox.com/faq",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_type": "iframe2",
+          "field_selector": "#beacon-container > div > div > div.sc-fznyAO.iuPVMp.BeaconFabButtonFrame > iframe",
+          "child": {
+            "field_name": "start",
+            "field_type": "click",
+            "field_selector": "#beacon-container > div > button"
+          }
+        },
+        {
+          "field_type": "iframe2",
+          "field_selector": "#beacon-container > div > div > div.sc-AxhCb.hMPnUk.BeaconContainer.is-configDisplayRight.BeaconContainer-enter-done > iframe",
+          "child": {
+            "field_name": "ask",
+            "field_type": "click",
+            "field_selector": "#BeaconContainer-root > div > div > div > div.sc-fznMnq.gqjSQL.c-HeaderNav.sc-fzoaKM.hNuJKS.BeaconLayout__Navigation > div > div > div:nth-child(2) > a"
+          }
+        },
+        {
+          "field_type": "iframe2",
+          "field_selector": "#beacon-container > div > div > div.sc-AxhCb.hMPnUk.BeaconContainer.is-configDisplayRight.BeaconContainer-enter-done > iframe",
+          "child": {
+            "field_name": "full_name",
+            "field_type": "type",
+            "field_selector": "#Input2",
+            "field_default_value": null
+          }
+        },
+        {
+          "field_type": "iframe2",
+          "field_selector": "#beacon-container > div > div > div.sc-AxhCb.hMPnUk.BeaconContainer.is-configDisplayRight.BeaconContainer-enter-done > iframe",
+          "child": {
+            "field_name": "subject",
+            "field_type": "type",
+            "field_selector": "#Input3",
+            "field_default_value": "Cancel Subscription, Please"
+          }
+        },
+        {
+          "field_type": "iframe2",
+          "field_selector": "#beacon-container > div > div > div.sc-AxhCb.hMPnUk.BeaconContainer.is-configDisplayRight.BeaconContainer-enter-done > iframe",
+          "child": {
+            "field_name": "reply_to",
+            "field_type": "type",
+            "field_selector": "#Input4",
+            "field_default_value": null
+          }
+        },
+        {
+          "field_type": "iframe2",
+          "field_selector": "#beacon-container > div > div > div.sc-AxhCb.hMPnUk.BeaconContainer.is-configDisplayRight.BeaconContainer-enter-done > iframe",
+          "child": {
+            "field_name": "message",
+            "field_type": "message",
+            "field_selector": "#Input5",
+            "field_default_value": ""
+          }
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_type": "iframe2",
+          "field_selector": "#beacon-container > div > div > div.sc-AxhCb.hMPnUk.BeaconContainer.is-configDisplayRight.BeaconContainer-enter-done > iframe",
+          "child": {
+            "field_name": "submit",
+            "field_type": "click",
+            "field_selector": "#BeaconContainer-root > div > div > div > div.sc-fzomuh.gHzJiR.BeaconLayout__Body.is-askmessagecontact-form-path > div > div > div > div > div > form > button"
+          }
+        }
+      ],
+      "closeable": [
+        {
+          "field_type": "iframe2",
+          "field_selector": "#attentive_creative",
+          "child": {
+            "field_name": "popup",
+            "field_type": "click",
+            "field_selector": "#closeIconContainer"
+          }
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "iframe_selector": "#beacon-container > div > div > div.sc-AxhCb.hMPnUk.BeaconContainer.is-configDisplayRight.BeaconContainer-enter-done > iframe",
+    "selector": "#BeaconContainer-root > div > div > div > div.sc-fzomuh.gHzJiR.BeaconLayout__Body.is-askmessageconfirmation-path > div > div > div > div",
+    "value": "We\u2019re on it!",
+    "name_suffix": "confirmation"
+  }
+}

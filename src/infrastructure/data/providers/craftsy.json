@@ -1,0 +1,96 @@
+{
+  "service_url": "https://www.craftsy.com/contact/",
+  "biller_id": "pro_15845567188428757AN0M1eUkFXV",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "first_name",
+          "field_type": "type",
+          "field_selector": "#firstName",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "last_name",
+          "field_type": "type",
+          "field_selector": "#lastName",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#email",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "membership",
+          "field_type": "select",
+          "field_selector": "#membershipLevel",
+          "field_default_value": "0"
+        },
+        {
+          "field_name": "category",
+          "field_type": "select",
+          "field_selector": "#selectedCategory",
+          "field_default_value": "cancellation"
+        },
+        {
+          "field_name": "sub_category",
+          "field_type": "select",
+          "field_selector": "#selectedSubcategory",
+          "field_default_value": "Cancel Reason Not Using"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#comments"
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        },
+        {
+          "field_name": "cookies",
+          "field_type": "click",
+          "field_selector": "button[data-test-ref='consent-disclose-banner-cta']"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "button[aria-label='Perform A Site Action']"
+        },
+        {
+          "alternative": true,
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "button[aria-label='Perform A Site Action']"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div.notification.is-success",
+    "value": "Your message has been sent successfully.",
+    "name_suffix": "confirmation"
+  }
+}

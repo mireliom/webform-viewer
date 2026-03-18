@@ -1,0 +1,54 @@
+{
+  "service_url": "https://support.elitesingles.com/hc/en-us/requests/new",
+  "biller_id": "pro_16760648684413838mMxVIti1xyT",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "contact_us",
+          "field_type": "click",
+          "field_selector": "body > main > div > div > div > ul > li:nth-child(3) > a",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#request_anonymous_requester_email",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "subject",
+          "field_type": "type",
+          "field_selector": "#request_subject",
+          "field_default_value": "Cancel Subscription"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#request_description",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "i_am",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_45551325",
+          "field_default_value": "cf_cancellation"
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "footer > input[type='submit'][name='commit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div[data-test-id='notification'] > strong",
+    "value": "Your request was successfully submitted.",
+    "name_suffix": "confirmation"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "service_url": "https://www.doubledaybookclub.com/member-services",
+  "biller_id": "pro_1678471135280398lVGZiovwemdY",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "input[placeholder='Your name']",
+          "field_default_value": null
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[placeholder='Your email']",
+          "field_default_value": null
+        },
+        {
+          "field_name": "subject",
+          "field_type": "type",
+          "field_selector": "input[placeholder='Subject']",
+          "field_default_value": "Cancel Subscription"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "textarea[placeholder='Message']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "issue_type",
+          "field_type": "select",
+          "field_selector": "select[name='help-issue-type']",
+          "field_default_value": "cancel_account"
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "button[class='btn-primary fat']"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "button[class='btn-primary fat']",
+    "value": "REQUEST SUBMITTED",
+    "name_suffix": "confirmation"
+  }
+}

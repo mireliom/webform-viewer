@@ -1,0 +1,65 @@
+{
+  "service_url": "https://help.upfaithandfamily.com/hc/en-us/requests/new",
+  "biller_id": "pro_17223418493889823jtGQ9NDskQI",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#request_anonymous_requester_email",
+          "field_default_value": null
+        },
+        {
+          "field_name": "subject",
+          "field_type": "type",
+          "field_selector": "#request_subject",
+          "field_default_value": "Cancel Subscription, Please"
+        },
+        {
+          "field_name": "issue_type",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_1500000358382",
+          "field_default_value": "account_"
+        },
+        {
+          "field_name": "account",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_360055410674",
+          "field_default_value": "pause/cancel_subscription_"
+        },
+        {
+          "field_name": "platform",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_360056388293",
+          "field_default_value": "website"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#request_description",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "footer > input[type='submit'][name='commit']"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "#zd-abm-feedback-no"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div[data-test-id='notification'] > strong",
+    "value": "Your request was successfully submitted.",
+    "name_suffix": "confirmation"
+  }
+}

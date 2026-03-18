@@ -1,0 +1,101 @@
+{
+  "service_url": "https://www.winc.com/pages/support?hcUrl=%2Fen-US%2Fcontact",
+  "biller_id": "pro_15306327707392194dA3jM6rI08Y",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 15000
+        },
+        {
+          "field_required": false,
+          "field_name": "select_email",
+          "field_type": "click",
+          "field_selector": "button[aria-label='Close dialog']",
+          "field_default_value": ""
+        },
+        {
+          "field_required": false,
+          "field_name": "ship_to",
+          "field_type": "select",
+          "field_selector": "div.ship-to select[name='state_select']",
+          "field_default_value": "AK"
+        },
+        {
+          "field_required": false,
+          "field_name": "age_select",
+          "field_type": "click",
+          "field_selector": "a[id='fg-age-confirm']",
+          "field_default_value": ""
+        },
+        {
+          "field_required": false,
+          "field_name": "cookies",
+          "field_type": "click",
+          "field_selector": "button[aria-label='Accept All']",
+          "field_default_value": ""
+        },
+        {
+          "field_iframe": "#vc3hr13h",
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "input[role='textbox'][id='fullName']",
+          "field_default_value": ""
+        },
+        {
+          "field_iframe": "#vc3hr13h",
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[role='textbox'][id='email']",
+          "field_default_value": ""
+        },
+        {
+          "field_iframe": "#vc3hr13h",
+          "field_name": "subject-select",
+          "field_type": "select",
+          "field_selector": "select[id='subject']",
+          "field_default_value": "Other"
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_iframe": "#vc3hr13h",
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "textarea[role='textbox'][id='message']",
+          "field_default_value": "Please cancel my paid subscription"
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_iframe": "#vc3hr13h",
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "button[type='submit']"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "iframe_selector": "#vc3hr13h",
+    "selector": "div[role='alert'] div div",
+    "value": "Your request was sent!",
+    "name_suffix": "confirmation"
+  }
+}

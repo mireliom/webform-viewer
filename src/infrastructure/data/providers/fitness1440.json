@@ -1,0 +1,50 @@
+{
+  "service_url": "https://fitness1440.com/contact/",
+  "biller_id": "pro_16787160193867152C5wVdb5iY4s",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "general_inquire",
+          "field_type": "click",
+          "field_selector": "#choice_1_9_1"
+        },
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "#input_1_1"
+        },
+        {
+          "field_name": "contact_phone",
+          "field_type": "type",
+          "field_selector": "#input_1_2"
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#input_1_3"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#input_1_4",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "#gform_submit_button_1"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "#gform_confirmation_message_1",
+    "value": "Thanks for contacting us",
+    "name_suffix": "confirmation"
+  }
+}

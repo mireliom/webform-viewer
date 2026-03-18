@@ -1,0 +1,59 @@
+{
+  "service_url": "https://support.amcplus.com/kb/guide/en/how-do-i-cancel-amc-iIPM4dreK2/Steps/3763641,3763651,3763669,3753826,3752801,3752802,3752800,3735188",
+  "biller_id": "pro_1722342795027223NwAZ5He7bkja",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "input[data-cy='inputText']"
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[data-cy='emailInput']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "subject",
+          "field_type": "type",
+          "field_selector": "input[data-cy='subjectInput']",
+          "field_default_value": "Cancel Subscription"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "textarea[data-cy='descriptionInput']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "country",
+          "field_type": "click",
+          "field_selector": "button[data-cy='inputDropdown']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "country_value",
+          "field_type": "click",
+          "selector_type": "xpath",
+          "field_selector": "//div[contains(text(), 'US')]"
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "button[data-cy='nextStepButton']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div[data-cy='thankYou']",
+    "value": "Thanks for your message",
+    "name_suffix": "confirmation"
+  }
+}

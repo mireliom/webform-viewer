@@ -1,0 +1,105 @@
+{
+  "service_url": "https://www.bottomlineinc.com/customer-care",
+  "biller_id": "pro_1678471789885602259NXEWqwIli",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        },
+        {
+          "alternative": true,
+          "field_name": "popup",
+          "field_type": "click",
+          "field_selector": "._close-icon"
+        },
+        {
+          "field_name": "first_name",
+          "field_type": "type",
+          "field_selector": "input[name='FirstName']"
+        },
+        {
+          "field_name": "last_name",
+          "field_type": "type",
+          "field_selector": "input[name='LastName']"
+        },
+        {
+          "field_name": "street",
+          "field_type": "type",
+          "field_selector": "input[name='Address']"
+        },
+        {
+          "alternative": true,
+          "field_name": "popup",
+          "field_type": "click",
+          "field_selector": "._close-icon"
+        },
+        {
+          "field_name": "street2",
+          "field_type": "type",
+          "field_selector": "input[name='Address2']",
+          "field_default_value": "N/A"
+        },
+        {
+          "field_name": "city",
+          "field_type": "type",
+          "field_selector": "input[name='City']"
+        },
+        {
+          "field_name": "state",
+          "field_type": "type",
+          "field_selector": "input[name='State']"
+        },
+        {
+          "field_name": "zip_code",
+          "field_type": "type",
+          "field_selector": "input[name='Zip']"
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[name='emailaddress']"
+        },
+        {
+          "field_name": "subject",
+          "field_type": "select",
+          "field_selector": "select[name='Subject']",
+          "field_default_value": "Other"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "textarea[name='your-message']",
+          "field_default_value": ""
+        },
+        {
+          "alternative": true,
+          "field_name": "popup",
+          "field_type": "click",
+          "field_selector": "._close-icon"
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "input[type='submit'][value='Send']"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div.wpcf7-response-output",
+    "value": "Thank you for your message. It has been sent",
+    "name_suffix": "confirmation"
+  }
+}

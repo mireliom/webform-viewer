@@ -1,0 +1,77 @@
+{
+  "service_url": "https://help.marvel.com/hc/en-us/requests/new",
+  "biller_id": "pro_1530632771796807HG4lpbPw76XD",
+  "proxy": true,
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#request_anonymous_requester_email",
+          "field_default_value": null
+        },
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "#request_custom_fields_32760362471572"
+        },
+        {
+          "field_name": "product",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_32552167986324",
+          "field_default_value": "form_product_marvel_unlimited"
+        },
+        {
+          "field_name": "issue",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_32710780215316",
+          "field_default_value": "marvel_ultd_billing_issue"
+        },
+        {
+          "field_name": "topic",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_32711676667412",
+          "field_default_value": "mu_cancellation-web"
+        },
+        {
+          "field_name": "subject",
+          "field_type": "type",
+          "field_selector": "#request_subject",
+          "field_default_value": "Cancel Subscription"
+        },
+        {
+          "field_name": "comments",
+          "field_type": "rich_text_editor",
+          "field_selector": "div[role='textbox']",
+          "field_default_value": "message"
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "scroll_submit",
+          "field_type": "scroll",
+          "field_selector": "footer > input[value='Submit']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "footer > input[value='Submit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "#main-content",
+    "value": "Welcome to Marvel Customer Support",
+    "name_suffix": "confirmation"
+  }
+}

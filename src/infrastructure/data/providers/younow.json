@@ -1,0 +1,65 @@
+{
+  "service_url": "https://support.younow.com/hc/en-us/requests/new",
+  "biller_id": "pro_16788825436771014IIjZGIMXIER",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#request_anonymous_requester_email",
+          "field_default_value": null
+        },
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "#request_custom_fields_23984596"
+        },
+        {
+          "field_name": "issue_type",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_24196533",
+          "field_default_value": "partner_payments"
+        },
+        {
+          "field_name": "subject",
+          "field_type": "type",
+          "field_selector": "#request_subject",
+          "field_default_value": "Cancel Subscription"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#request_description",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "membership_partner",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_360036925671",
+          "field_default_value": "partner"
+        },
+        {
+          "field_name": "language",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_360040833611",
+          "field_default_value": "english"
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "footer > input[type='submit'][name='commit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div[data-test-id='notification'] > strong",
+    "value": "Your request was successfully submitted.",
+    "name_suffix": "confirmation"
+  }
+}

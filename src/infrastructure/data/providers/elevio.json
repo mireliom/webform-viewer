@@ -1,0 +1,110 @@
+{
+  "service_url": "https://elev.io/contact",
+  "biller_id": "pro_16056270494595952U34XNw2pNYZ",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "question",
+          "field_type": "click",
+          "field_selector": "a.button.de-elevio.is-outlined.is-expanded-mobile",
+          "field_default_value": null
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "first_name",
+            "field_type": "type",
+            "field_selector": "input[placeholder='Name']",
+            "field_default_value": ""
+          }
+        },
+
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "last_name",
+            "field_type": "type",
+            "field_selector": "input[placeholder='Surname']",
+            "field_default_value": ""
+          }
+        },
+
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "reply_to",
+            "field_type": "type",
+            "field_selector": "input[placeholder='Email']",
+            "field_default_value": ""
+          }
+        },
+
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "subject",
+            "field_type": "type",
+            "field_selector": "input[placeholder='Subject']",
+            "field_default_value": "Cancel my subscription"
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "message",
+            "field_type": "message",
+            "field_selector": "textarea[placeholder='Describe your issue here...']",
+            "field_default_value": ""
+          }
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "submit",
+            "field_type": "click",
+            "field_selector": "button[type='submit']"
+          }
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "submit",
+            "field_type": "click",
+            "field_selector": "[class*='footerButton']"
+          }
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "iframe_selector": "undefined",
+    "selector": "[class*='helpedText']",
+    "value": "get back to you shortly",
+    "name_suffix": "confirmation"
+  }
+}

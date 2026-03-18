@@ -1,0 +1,48 @@
+{
+  "service_url": "https://support.dailyburn.com/hc/en-us/requests/new",
+  "wss": "wss://brd-customer-hl_225f2082-zone-scraping_browser1:a2701pjii5pc@brd.superproxy.io:9222",
+  "biller_id": "pro_15197482891390721sMSp9I8pVwj",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 1000
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[name='request[anonymous_requester_email]']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "subject",
+          "field_type": "type",
+          "field_selector": "input[name='request[subject]']",
+          "field_default_value": "Cancel Subscription, Please"
+        },
+        {
+          "field_name": "message",
+          "field_type": "type",
+          "field_selector": "div[role='textbox']",
+          "field_default_value": "Cancel subscription, plase"
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "button[type='submit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "h2[class='recent-activity-header']",
+    "value": "Recent activity",
+    "name_suffix": "confirmation"
+  }
+}

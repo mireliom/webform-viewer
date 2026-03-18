@@ -1,0 +1,48 @@
+{
+  "service_url": "https://bomibox.com/pages/contact-us",
+  "biller_id": "pro_15916435897723148wIw4ZJoweJK",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "#ContactFormName",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#ContactFormEmail",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "contact_phone",
+          "field_type": "type",
+          "field_selector": "#ContactFormPhone",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#ContactFormMessage",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "#contact_form > div > div > div > div:nth-child(2) > input"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "#contact_form > p.note.form-success",
+    "value": "Thanks for contacting us. We'll get back to you as soon as possible.",
+    "name_suffix": "confirmation"
+  }
+}

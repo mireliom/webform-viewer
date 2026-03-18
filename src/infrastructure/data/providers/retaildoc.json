@@ -1,0 +1,47 @@
+{
+  "service_url": "https://www.retaildoc.com/retail-consulting-firm/contact",
+  "biller_id": "pro_16788156574679203GVhrLiHziob",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[name='email']"
+        },
+        {
+          "field_name": "topic",
+          "field_type": "select",
+          "field_selector": "select[name='topic']",
+          "field_default_value": "Topic 1"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "textarea[name='your_message']",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "input[type='submit'][value='SUBMIT']"
+        },
+        {
+          "alternative": true,
+          "field_name": "captcha",
+          "field_type": "2captcha",
+          "field_selector": ""
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "#hs_form_target_form_318042260",
+    "value": "Thanks for submitting the form.",
+    "name_suffix": "confirmation"
+  }
+}

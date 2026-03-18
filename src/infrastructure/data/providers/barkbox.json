@@ -1,0 +1,95 @@
+{
+  "service_url": "https://www.barkbox.com/contact-us-email",
+  "biller_id": "pro_1530632770338138Fwwn1kar24AG",
+  "proxy": true,
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "reply_to",
+            "field_type": "type",
+            "field_selector": "#field147574063",
+            "field_default_value": null
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "subject",
+            "field_type": "type",
+            "field_selector": "#field147574086",
+            "field_default_value": "Cancel Subscription, Please"
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "message",
+            "field_type": "message",
+            "field_selector": "#field147574087",
+            "field_default_value": ""
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "scroll_topic",
+            "field_type": "scroll",
+            "field_selector": "#field147574089",
+            "field_default_value": ""
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "topic",
+            "field_type": "select",
+            "field_selector": "#field147574089",
+            "field_default_value": "Billing"
+          }
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "submit",
+            "field_type": "click",
+            "field_selector": "#fsSubmitButton5355032"
+          }
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_name": "scroll",
+          "field_type": "scroll",
+          "field_selector": "#communication-container > div.select-component",
+          "field_default_value": ""
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "iframe_selector": "undefined",
+    "selector": "div[class='fsSectionText']",
+    "value": "The form was submitted successfully",
+    "name_suffix": "confirmation"
+  }
+}

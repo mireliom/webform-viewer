@@ -1,0 +1,40 @@
+{
+  "service_url": "https://videostripe.com/support",
+  "biller_id": "pro_167881786775084331E7N5aeIagZ",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "#name"
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#email"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#message",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "button[type='submit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div[type=success]",
+    "value": "Message has been sent",
+    "name_suffix": "confirmation"
+  }
+}

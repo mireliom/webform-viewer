@@ -1,0 +1,51 @@
+{
+  "service_url": "https://www.intelius.com/contact/",
+  "biller_id": "pro_16787223353955886B9ONyOojL38",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "input[name='name']"
+        },
+        {
+          "field_name": "subject",
+          "field_type": "select",
+          "field_selector": "select[name='subject']",
+          "field_default_value": "Cancel Request"
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[name='email']"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "textarea[name='body']",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "button[type='submit']"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "#response",
+    "value": "Your message was sent successfully",
+    "name_suffix": "confirmation"
+  }
+}

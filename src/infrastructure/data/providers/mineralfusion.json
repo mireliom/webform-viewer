@@ -1,0 +1,90 @@
+{
+  "service_url": "https://www.mineralfusion.com/pages/contact",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_name": "remove",
+          "field_type": "remove",
+          "field_selector": "#yie-overlay-d03c1218-4cbe-54ee-9295-bd6717a28a18",
+          "field_default_value": null
+        },
+        {
+          "field_type": "iframe",
+          "alternative": true,
+          "child": {
+            "alternative": true,
+            "field_name": "remove",
+            "field_type": "click",
+            "field_selector": "#SmileUIPromptContainer > div > div > button.system-btn.close.prompt-close-btn",
+            "field_default_value": null
+          }
+        },
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "input[name='contact[name]']",
+          "field_default_value": null
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[name='contact[email]']",
+          "field_default_value": null
+        },
+        {
+          "field_name": "topic",
+          "field_type": "select",
+          "field_selector": "select[name='contact[Topic]']",
+          "field_default_value": "Other"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "textarea[name='contact[body]']",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "#contact_form > div.form-body > button"
+        }
+      ]
+    },
+    {
+      "fields": [
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        },
+        {
+          "alternative": true,
+          "field_name": "captcha",
+          "field_type": "2captcha",
+          "field_selector": ""
+        },
+        {
+          "alternative": true,
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "input.shopify-challenge__button.btn"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "#contact_form",
+    "value": "Thank you for getting in touch with us",
+    "name_suffix": "confirmation"
+  }
+}

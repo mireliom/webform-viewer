@@ -1,0 +1,76 @@
+{
+  "service_url": "https://gentlemansbox.com/pages/contact-us",
+  "biller_id": "pro_15886213921349375h8O0uc13l3o",
+  "proxy": true,
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "#contact_name",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#contact_email",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#message",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "input[type='submit']"
+        }
+      ],
+      "closeable": [
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        },
+        {
+          "field_name": "popup",
+          "field_type": "click",
+          "field_selector": "#shopify-section-popup > section > div.cc-popup-modal > button"
+        }
+      ]
+    },
+    {
+      "fields": [
+        {
+          "alternative": true,
+          "field_name": "captcha",
+          "field_type": "captcha",
+          "field_selector": "api2/anchor?ar=1&k=6LeoeSkTAAAAAA9rkZs5oS82l69OEYjKRZAiKdaF"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 1000
+        },
+        {
+          "alternative": true,
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "input[type='submit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "#contact_form > div[class='rte align-center']",
+    "value": "Thanks for contacting us. We'll get back to you as soon as possible.",
+    "name_suffix": "confirmation"
+  }
+}

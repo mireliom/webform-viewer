@@ -1,0 +1,59 @@
+{
+  "service_url": "https://help.owlcrate.com/en-US/contact",
+  "biller_id": "pro_158455555541596153qiTloapOvO",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "input[name='name']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[name='email']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "subject",
+          "field_type": "type",
+          "field_selector": "button[data-testid='dropdown-toggle']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "subject_value",
+          "field_type": "click",
+          "selector_type": "xpath",
+          "field_selector": "//button[contains(text(), 'I need to Cancel my Subscription/Order')]"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "textarea[name='message']",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "button.btn.btn-secondary[type='submit']"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div.ghc-main-content-container",
+    "value": "Your request was sent",
+    "name_suffix": "confirmation"
+  }
+}

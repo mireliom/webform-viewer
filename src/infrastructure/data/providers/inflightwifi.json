@@ -1,0 +1,48 @@
+{
+  "service_url": "https://inflightwifi.one/contact-us/",
+  "biller_id": "pro_151974828718140328ICo43IcwOF",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "first_name",
+          "field_type": "type",
+          "field_selector": "input[name='wpforms[fields][0][first]']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "last_name",
+          "field_type": "type",
+          "field_selector": "input[name='wpforms[fields][0][last]']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[type='email']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "textarea[name='wpforms[fields][2]']",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "button[name='wpforms[submit]']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "#wpforms-confirmation-185",
+    "value": "Thanks for contacting us",
+    "name_suffix": "confirmation"
+  }
+}

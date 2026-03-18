@@ -1,0 +1,42 @@
+{
+  "service_url": "https://maxworkouts.paperform.co/",
+  "biller_id": "pro_16787360389916563BAaxpYxTBmP",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#field-email-daeub",
+          "field_default_value": null
+        },
+        {
+          "field_name": "subject",
+          "field_type": "type",
+          "field_selector": "#field-text-bmc50",
+          "field_default_value": "Cancel Subscription"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#field-text-2psq0",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "div.submit > span"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div.margin-bottom-12 > h1",
+    "value": "Message received.",
+    "name_suffix": "confirmation"
+  }
+}

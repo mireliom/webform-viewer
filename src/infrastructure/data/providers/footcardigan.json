@@ -1,0 +1,78 @@
+{
+  "service_url": "https://www.footcardigan.com/pages/contact-us",
+  "biller_id": "pro_16056412132211704aSGaNektBiG",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "full_name",
+            "field_type": "type",
+            "field_selector": "div:nth-child(1) > input[name='name']"
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "reply_to",
+            "field_type": "type",
+            "field_selector": "div:nth-child(2) > input[name='email']"
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "subject",
+            "field_type": "click",
+            "field_selector": "div:nth-child(3) > div.ghc-form-dropdown.css-bjn8wh.ey637kz3.dropdown > button > span"
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "subject",
+            "field_type": "click",
+            "field_selector": "div:nth-child(3) > div > div > button:nth-child(6)"
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "subject3",
+            "field_type": "type",
+            "field_selector": "input[name='other_subject']",
+            "field_default_value": "Cancel subscription"
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "message",
+            "field_type": "message",
+            "field_selector": "textarea[name='message']",
+            "field_default_value": ""
+          }
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "submit",
+            "field_type": "click",
+            "field_selector": "button[type='submit']"
+          }
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "iframe_selector": "#gorgias-contact-form",
+    "selector": "div.ghc-success-page",
+    "value": "Your request was sent!",
+    "name_suffix": "confirmation"
+  }
+}

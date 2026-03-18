@@ -1,0 +1,91 @@
+{
+  "service_url": "https://www.sockittome.com/pages/contact",
+  "biller_id": "pro_15886225690296938y1fZvd9lPH9",
+  "proxy": true,
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "cookies",
+          "field_type": "click",
+          "field_selector": "#shopify-pc__banner__btn-accept",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "first_name",
+            "field_type": "type",
+            "field_selector": "input[data-component='first']",
+            "field_default_value": ""
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "last_name",
+            "field_type": "type",
+            "field_selector": "input[data-component='last']",
+            "field_default_value": ""
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "reply_to",
+            "field_type": "type",
+            "field_selector": "input[data-component='email']",
+            "field_default_value": ""
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "reason",
+            "field_type": "select",
+            "field_selector": "select[data-component='dropdown']",
+            "field_default_value": "Question about my order"
+          }
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 1000
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "message",
+            "field_type": "message",
+            "field_selector": "textarea[data-component='textarea']",
+            "field_default_value": ""
+          }
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "submit",
+            "field_type": "click",
+            "field_selector": "button[data-component='button']",
+            "field_default_value": ""
+          }
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "iframe_selector": "undefined",
+    "selector": "#stage",
+    "value": "We got it",
+    "name_suffix": "confirmation"
+  }
+}

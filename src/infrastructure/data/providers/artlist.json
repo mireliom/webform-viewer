@@ -1,0 +1,64 @@
+{
+  "service_url": "https://help.artlist.io/hc/en-us/requests/new",
+  "biller_id": "pro_15886246908267357ZtzthTlZ5Nq",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#request_anonymous_requester_email",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "subscription",
+          "field_type": "click",
+          "field_selector": "#request_custom_fields_7383736164125",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "email",
+          "field_type": "type",
+          "field_selector": "#request_custom_fields_6230310435101",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "#request_custom_fields_6369705475613",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "subject",
+          "field_type": "type",
+          "field_selector": "#request_subject",
+          "field_default_value": "Cancel Subscription"
+        },
+        {
+          "field_type": "iframe2",
+          "field_selector": "#request_description_ifr",
+          "child": {
+            "field_name": "message",
+            "field_type": "message",
+            "field_selector": "#tinymce",
+            "field_default_value": ""
+          }
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "footer > input[type='submit'][name='commit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div[data-test-id='notification'] > strong",
+    "value": "Your request was successfully submitted.",
+    "name_suffix": "confirmation"
+  }
+}

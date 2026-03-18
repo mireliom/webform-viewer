@@ -1,0 +1,54 @@
+{
+  "service_url": "https://www.myapocabox.com/contact-1",
+  "biller_id": "pro_15886228950366297oP0neyhip0H",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "first_name",
+          "field_type": "type",
+          "field_selector": "input[name='fname']",
+          "field_default_value": null
+        },
+        {
+          "field_name": "last_name",
+          "field_type": "type",
+          "field_selector": "input[name='lname']",
+          "field_default_value": null
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[name='email']",
+          "field_default_value": null
+        },
+        {
+          "field_name": "subject",
+          "field_type": "type",
+          "field_selector": "#text-yui_3_17_2_1_1534527928181_1626-field",
+          "field_default_value": "Cancel Subscription, Please"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#textarea-yui_3_17_2_1_1534527928181_1627-field",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "input[type='submit'][value='Submit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": ".form-submission-text",
+    "value": "Thank you! We will get back with you shortly!",
+    "name_suffix": "confirmation"
+  }
+}

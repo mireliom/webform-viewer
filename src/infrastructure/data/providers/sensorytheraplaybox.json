@@ -1,0 +1,93 @@
+{
+  "service_url": "https://sensorytheraplaybox.com/contact",
+  "biller_id": "pro_15886152949420013NSsStQgmygG",
+  "pages": [
+    {
+      "fields": [
+        {
+          "alternative": true,
+          "field_name": "popup",
+          "field_type": "click",
+          "field_selector": "div.sumome-react-svg-image-container",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "alternative": true,
+            "field_name": "popup",
+            "field_type": "click",
+            "field_selector": "button[data-testid='launcher'][aria-label='Help']",
+            "field_default_value": ""
+          }
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "full_name",
+            "field_type": "type",
+            "field_selector": "input[name='name']",
+            "field_default_value": ""
+          }
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 200
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "reply_to",
+            "field_type": "type",
+            "field_selector": "input[name='email']",
+            "field_default_value": ""
+          }
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 400
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "message",
+            "field_type": "message",
+            "field_selector": "textarea[name='message']",
+            "field_default_value": ""
+          }
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 500
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "submit",
+            "field_type": "click",
+            "field_selector": "button[data-testid='button-ok']",
+            "field_default_value": ""
+          }
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "iframe_selector": "undefined",
+    "selector": "main[data-testid='scroll-container-content']",
+    "value": "Thanks for reaching out",
+    "name_suffix": "confirmation"
+  }
+}

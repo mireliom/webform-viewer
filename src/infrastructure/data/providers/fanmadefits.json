@@ -1,0 +1,51 @@
+{
+  "service_url": "https://fanmadefits.com/support",
+  "biller_id": "pro_17219356911802588LVDN99qLWWB",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[placeholder='Email Address']"
+        },
+        {
+          "field_name": "reason",
+          "field_type": "click",
+          "field_selector": "span.ant-select-selection-search"
+        },
+        {
+          "field_name": "nature_value",
+          "field_type": "click",
+          "selector_type": "xpath",
+          "field_selector": "//span[contains(text(), 'Cancel Membership')]"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "textarea[placeholder='Type here']",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "div[class*='Support_btn'] > button"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div.ant-notification-notice-message",
+    "value": "Support has been requested successfully",
+    "name_suffix": "confirmation"
+  }
+}

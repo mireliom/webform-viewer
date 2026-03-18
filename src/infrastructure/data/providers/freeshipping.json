@@ -1,0 +1,48 @@
+{
+  "service_url": "https://www.freeshipping.com/contact-us",
+  "biller_id": "pro_160564201607583TBlt35Tl3oaGs",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "first_name",
+          "field_type": "type",
+          "field_selector": "#FirstName"
+        },
+        {
+          "field_name": "last_name",
+          "field_type": "type",
+          "field_selector": "#LastName"
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#Email"
+        },
+
+
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#Comments",
+          "field_default_value": ""
+        },
+
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "#BtnContactFormSubmitCTA"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div.test-contact-us-successful",
+    "value": "message has been sent",
+    "name_suffix": "confirmation"
+  }
+}

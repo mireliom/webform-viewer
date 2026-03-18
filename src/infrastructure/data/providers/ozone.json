@@ -1,0 +1,56 @@
+{
+  "service_url": "https://www.ozonesocks.com/pages/contact-us",
+  "biller_id": "pro_15883521839770083QIFA5DueI6h",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "#ContactFormName-template--16754126323938__form"
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#ContactFormEmail-template--16754126323938__form"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#ContactFormMessage-template--16754126323938__form",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "#contact-form-submit-template--16754126323938__form"
+        }
+      ]
+    },
+    {
+      "fields": [
+        {
+          "alternative": true,
+          "field_name": "captcha",
+          "field_type": "captcha",
+          "field_selector": "api2/anchor?ar=1&k=6LeoeSkTAAAAAA9rkZs5oS82l69OEYjKRZAiKdaF"
+        },
+        {
+          "alternative": true,
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "input[type='submit'][value='Submit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "p.note--success",
+    "value": "Thanks for contacting us. We'll get back to you as soon as possible.",
+    "name_suffix": "confirmation"
+  }
+}

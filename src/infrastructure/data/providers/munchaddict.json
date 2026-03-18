@@ -1,0 +1,54 @@
+{
+  "service_url": "https://help.munchaddict.com/en-US/contact",
+  "biller_id": "pro_17237509645043192g8DV75Numaz",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "input[name='name']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[name='email']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "subject",
+          "field_type": "select",
+          "field_selector": "#subject",
+          "field_default_value": "other"
+        },
+        {
+          "field_name": "other_subject",
+          "field_type": "type",
+          "field_selector": "input[name='other_subject']",
+          "field_default_value": "Cancel Subscription"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#message",
+          "field_default_value": "Cancel Subscription"
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "button[type='submit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div.ghc-success-page",
+    "value": "Your request was sent!",
+    "name_suffix": "confirmation"
+  }
+}

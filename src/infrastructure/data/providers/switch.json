@@ -1,0 +1,93 @@
+{
+  "service_url": "https://joinswitch.com/contact",
+  "biller_id": "pro_15886181503171406DqQmP3rOFOB",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        },
+        {
+          "field_type": "iframe2",
+          "field_selector": "#attentive_creative",
+          "alternative": true,
+          "child": {
+            "alternative": true,
+            "field_type": "click",
+            "field_selector": "#closeIconContainer"
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "full_name",
+            "field_type": "type",
+            "field_selector": "#customerName",
+            "field_default_value": null
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "reply_to",
+            "field_type": "type",
+            "field_selector": "#customerEmail",
+            "field_default_value": null
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "subject",
+            "field_type": "type",
+            "field_selector": "#messageSubject",
+            "field_default_value": "Cancel Subscription"
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "message",
+            "field_type": "message",
+            "field_selector": "#messagePreview",
+            "field_default_value": ""
+          }
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "scroll_subject",
+            "field_type": "scroll",
+            "field_selector": "#messageSubject",
+            "field_default_value": ""
+          }
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "submit",
+            "field_type": "click",
+            "field_selector": "button[type='submit']"
+          }
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "iframe_selector": "undefined",
+    "selector": "#template > div > div > main > div.container-contact > div > div > div",
+    "value": "Your submission was successfully sent.",
+    "name_suffix": "confirmation"
+  }
+}

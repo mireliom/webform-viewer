@@ -1,0 +1,80 @@
+{
+  "service_url": "https://support.scribd.com/hc/en-us/requests/new?ticket_form_id=360001526992",
+  "biller_id": "pro_15886103884138526KN9osLp2TeB",
+  "proxy": true,
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#request_anonymous_requester_email",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_name": "issue_type",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_360042456252",
+          "field_default_value": "membership_inquiry"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_name": "issue_type",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_360042456272",
+          "field_default_value": "cancellation_request"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_name": "subject",
+          "field_type": "type",
+          "field_selector": "#request_subject",
+          "field_default_value": "Cancel Subscription, Please"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#request_description",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "footer > input[type='submit'][name='commit']"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 3000
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "body",
+    "value": "Your request was successfully submitted.",
+    "name_suffix": "confirmation"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "service_url": "https://www.spokeo.com/contact",
+  "biller_id": "pro_15306327725304246geXxTx311DC",
+  "wss": "wss://brd-customer-hl_225f2082-zone-scraping_browser1:a2701pjii5pc@brd.superproxy.io:9222",
+  "alias": true,
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "nature_value",
+          "field_type": "click",
+          "field_selector": "div[id='connect-way-email'] button"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "topic",
+          "field_type": "select",
+          "field_selector": "#reason",
+          "field_default_value": "billing"
+        },
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "#name",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#email",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#feedback",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "special_offers",
+          "field_type": "click",
+          "field_selector": "#email_optin_no",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "button.enomr7n0",
+          "field_default_value": null
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div.contact-form-overlay-container > div > h2",
+    "value": "Thank you for your feedback!",
+    "name_suffix": "confirmation"
+  }
+}

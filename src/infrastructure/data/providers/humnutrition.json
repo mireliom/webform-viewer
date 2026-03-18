@@ -1,0 +1,79 @@
+{
+  "service_url": "https://www.humnutrition.com/contact",
+  "biller_id": "pro_16057269000886614YG9ss2Ay0xM",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        },
+        {
+          "alternative": true,
+          "field_name": "popup",
+          "field_type": "click",
+          "field_selector": "button.needsclick.klaviyo-close-form",
+          "field_default_value": ""
+        },
+        {
+          "alternative": true,
+          "field_name": "start",
+          "field_type": "click",
+          "field_selector": "button.invision-button",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "first_name",
+          "field_type": "type",
+          "field_selector": "input[name='firstName']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "last_name",
+          "field_type": "type",
+          "field_selector": "input[name='lastName']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[name='email']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "subject",
+          "field_type": "select",
+          "field_selector": "select[name='subject']",
+          "field_default_value": "cancel_subscription"
+        },
+        {
+          "field_name": "email",
+          "field_type": "type",
+          "field_selector": "input[name='emailAssociated']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "textarea[name='message']",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "button[type='submit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div.dialog-content",
+    "value": "Message Sent",
+    "name_suffix": "confirmation"
+  }
+}

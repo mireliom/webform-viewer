@@ -1,0 +1,67 @@
+{
+  "service_url": "https://support.coursehero.com/hc/en-us/articles/200351044-Do-I-have-to-pay-How-much-does-it-cost",
+  "biller_id": "pro_172227345553735979XoY5bPu90f",
+  "proxy": true,
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "contact_us",
+          "field_type": "click",
+          "field_selector": "div.support_body_container > button.btn-secondary",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "category",
+          "field_type": "select",
+          "field_selector": "#support_form_category_dropdown",
+          "field_default_value": "Billing"
+        },
+        {
+          "field_name": "issue",
+          "field_type": "select",
+          "field_selector": "#support_form_issue_dropdown",
+          "field_default_value": "billing__cancellation_request"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#support_form_description",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "#support_form_name",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#support_form_email",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "last_4",
+          "field_type": "type",
+          "field_selector": "#support_form_last4",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "#support_form_submit"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div.ch-alert.showchAlert",
+    "value": "Thanks for contacting us",
+    "name_suffix": "confirmation"
+  }
+}

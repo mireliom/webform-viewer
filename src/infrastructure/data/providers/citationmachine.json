@@ -1,0 +1,87 @@
+{
+  "service_url": "http://support.citationmachine.net/",
+  "biller_id": "pro_15845566690389237FInjq59uC4L",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "issue_type",
+          "field_type": "click",
+          "field_selector": "a[role='button'][nr-tooltip='I want to cancel my subscription']"
+        },
+        {
+          "field_name": "action",
+          "field_type": "click",
+          "field_selector": "a[role='button'][class='nr-channeling-actionbar-buttontext']"
+        },
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "input[type='text'][class='CFP_Name']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[type='text'][class='CFP_Email']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "issue_type",
+          "field_type": "select",
+          "field_selector": "#selectbox2",
+          "field_default_value": "My Account & Billing"
+        },
+        {
+          "field_name": "issue_type",
+          "field_type": "select",
+          "field_selector": "#selectbox3",
+          "field_default_value": "I want to cancel my trial/subscription or request a refund."
+        },
+        {
+          "field_name": "issue_type",
+          "field_type": "select",
+          "field_selector": "#selectbox4",
+          "field_default_value": "I don't need this right now."
+        },
+        {
+          "field_name": "email",
+          "field_type": "type",
+          "field_selector": "input[type='text'][class='CFP_General'][name='textfield6']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "last_4",
+          "field_type": "type",
+          "field_selector": "input[type='text'][class='CFP_General'][name='textfield7']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "payment_info",
+          "field_type": "type",
+          "field_selector": "input[type='text'][class='CFP_General'][name='textfield8']",
+          "field_default_value": "Not Sure"
+        },
+        {
+          "field_name": "refund",
+          "field_type": "click",
+          "field_selector": "#choiceInput1"
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "refund",
+          "field_type": "click",
+          "field_selector": "input[type='button'][name='submitbutton']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div[class='nr-ticket-form-status-wrapper'] > div > div > div",
+    "value": "Thank you! Your submission has been received.",
+    "name_suffix": "confirmation"
+  }
+}

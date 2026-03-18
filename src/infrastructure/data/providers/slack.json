@@ -1,0 +1,69 @@
+{
+  "service_url": "https://slack.com/help/requests/new",
+  "biller_id": "pro_15845555945115232ourzxMlteOI",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[name='email']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 1000
+        },
+        {
+          "field_name": "topic",
+          "field_type": "click",
+          "selector_type": "xpath",
+          "field_selector": "//button[text()='Billing & plans']"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_name": "message",
+          "field_type": "scroll",
+          "field_selector": "#request_title",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "textarea[name='text']",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "#submit_btn",
+          "field_default_value": ""
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "#main",
+    "value": "Thank you for contacting us",
+    "name_suffix": "confirmation"
+  }
+}

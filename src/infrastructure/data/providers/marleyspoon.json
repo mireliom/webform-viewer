@@ -1,0 +1,65 @@
+{
+  "service_url": "https://marleyspoon.com/contact",
+  "biller_id": "pro_15686564779744852r9DLT1o7Fvr",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "contact",
+          "field_type": "click",
+          "field_selector": "a.header__contact-button",
+          "field_default_value": null
+        },
+        {
+          "field_name": "reason",
+          "field_type": "select",
+          "field_selector": "#request_issue_type_select",
+          "field_default_value": "360000076415"
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#request_anonymous_requester_email",
+          "field_default_value": null
+        },
+        {
+          "field_name": "issue",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_360000298615",
+          "field_default_value": "cancel_subscription"
+        },
+        {
+          "field_name": "issue_type",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_360002620696",
+          "field_default_value": "eoif"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#request_description",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "footer > input[type='submit'][name='commit']"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "#zd-abm-feedback-no"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div[data-test-id='notification'] > strong",
+    "value": "Your request was successfully submitted.",
+    "name_suffix": "confirmation"
+  }
+}

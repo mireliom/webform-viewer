@@ -1,0 +1,52 @@
+{
+  "service_url": "https://www.lynxtv.com/contact/support",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "#name",
+          "field_default_value": null
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#email",
+          "field_default_value": null
+        },
+        {
+          "field_name": "category",
+          "field_type": "select",
+          "field_selector": "#category",
+          "field_default_value": "cf_manage_subscriptions"
+        },
+        {
+          "field_name": "continue",
+          "field_type": "click",
+          "field_selector": "div.row.text-left.category--helper > div > div > a"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#message",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "input[name='commit'][value='Send']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div.content-container",
+    "value": "THANK YOU",
+    "name_suffix": "confirmation"
+  }
+}

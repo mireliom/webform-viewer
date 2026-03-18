@@ -1,0 +1,169 @@
+{
+  "service_url": "https://support.mlb.com/s/contact-us",
+  "biller_id": "pro_153063277186286331FYM8yBQH8K",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "reason",
+          "field_type": "click",
+          "field_selector": "button[name='Reason_for_Contact__c']"
+        },
+        {
+          "field_name": "reason_option",
+          "field_type": "click",
+          "field_selector": ".slds-listbox__option_plain[data-value='Subscription']"
+        },
+        {
+          "field_name": "category",
+          "field_type": "click",
+          "field_selector": "button[name='Category__c']"
+        },
+        {
+          "field_name": "category_option",
+          "field_type": "click",
+          "field_selector": ".slds-listbox__option_plain[data-value='MLB.TV']"
+        },
+        {
+          "field_name": "sub_category",
+          "field_type": "click",
+          "field_selector": "button[name='Sub_Category__c']"
+        },
+        {
+          "field_name": "sub_category_option",
+          "field_type": "click",
+          "field_selector": ".slds-listbox__option_plain[data-value='Auto-Renewal Cancel']"
+        },
+        {
+          "field_name": "reason",
+          "field_type": "click",
+          "field_selector": "button[name='Reason_For_Cancellation__c']"
+        },
+        {
+          "field_name": "reason_option",
+          "field_type": "click",
+          "field_selector": ".slds-listbox__option_plain[data-value='Not using product enough']"
+        },
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "input[name='SuppliedName']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[name='SuppliedEmail']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "contact_phone",
+          "field_type": "type",
+          "field_selector": "input[name='SuppliedPhone']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "textarea[name='Description']",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "reason",
+          "field_type": "click",
+          "field_selector": "button[name='Reason_for_Contact__c']"
+        },
+        {
+          "field_name": "reason_option",
+          "field_type": "click",
+          "field_selector": ".slds-listbox__option_plain[data-value='Subscription']"
+        },
+        {
+          "field_name": "category",
+          "field_type": "click",
+          "field_selector": "button[name='Category__c']"
+        },
+        {
+          "field_name": "category_option",
+          "field_type": "click",
+          "field_selector": ".slds-listbox__option_plain[data-value='MLB.TV']"
+        },
+        {
+          "field_name": "sub_category",
+          "field_type": "click",
+          "field_selector": "button[name='Sub_Category__c']"
+        },
+        {
+          "field_name": "sub_category_option",
+          "field_type": "click",
+          "field_selector": ".slds-listbox__option_plain[data-value='Auto-Renewal Cancel']"
+        },
+        {
+          "field_name": "reason",
+          "field_type": "click",
+          "field_selector": "button[name='Reason_For_Cancellation__c']"
+        },
+        {
+          "field_name": "reason_option",
+          "field_type": "click",
+          "field_selector": ".slds-listbox__option_plain[data-value='Not using product enough']"
+        },
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "input[name='SuppliedName']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[name='SuppliedEmail']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "contact_phone",
+          "field_type": "type",
+          "field_selector": "input[name='SuppliedPhone']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "textarea[name='Description']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "acknowledgment",
+          "field_type": "click",
+          "field_selector": "span.slds-checkbox_faux",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "selector_type": "xpath",
+          "field_selector": "//button[contains(text(), 'Submit')]"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 10000
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div[data-region-name='content']",
+    "value": "Thank you for submitting your",
+    "name_suffix": "confirmation"
+  }
+}

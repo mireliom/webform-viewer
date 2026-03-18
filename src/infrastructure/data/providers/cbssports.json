@@ -1,0 +1,146 @@
+{
+  "service_url": "https://help.cbssports.com/s/contactsupport",
+  "biller_id": "pro_15845565035622628dyKomtLScLH",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_name": "first_name",
+          "field_type": "type",
+          "selector_type": "xpath",
+          "field_selector": "//*[@name='First_Name__c']"
+        },
+        {
+          "field_name": "last_name",
+          "field_type": "type",
+          "selector_type": "xpath",
+          "field_selector": "//*[@name='Last_Name__c']"
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "selector_type": "xpath",
+          "field_selector": "//*[@name='SuppliedEmail']"
+        },
+        {
+          "field_name": "subject",
+          "field_type": "type",
+          "selector_type": "xpath",
+          "field_selector": "//*[@name='Subject']",
+          "field_default_value": "Cancel Subscription, Please"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "selector_type": "xpath",
+          "field_selector": "//*[@name='Description']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "information_account",
+          "field_type": "click",
+          "selector_type": "xpath",
+          "field_selector": "//*[@name='All_Access_Category_Preview__c']",
+          "field_default_value": "Account Information"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_name": "information_account_value",
+          "field_type": "click",
+          "selector_type": "xpath",
+          "field_selector": "//*[@data-value='Account Information']"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_name": "sub_category_account",
+          "field_type": "click",
+          "selector_type": "xpath",
+          "field_selector": "//*[@name='All_Access_Sub_Category_Preview__c']"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_name": "sub_category_account_value",
+          "field_type": "click",
+          "selector_type": "xpath",
+          "field_selector": "//*[@data-value='Delete Account']"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_name": "platform",
+          "field_type": "click",
+          "selector_type": "xpath",
+          "field_selector": "//*[@name='Platform__c']"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_name": "platform_value",
+          "field_type": "click",
+          "selector_type": "xpath",
+          "field_selector": "//*[@data-value='Mobile Web/Browser']"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 2000
+        },
+        {
+          "field_type": "iframe2",
+          "field_selector": "//*[@id='recaptchaIFrame-5']",
+          "selector_type": "xpath",
+          "alternative": true,
+          "child": {
+            "field_name": "captcha",
+            "field_type": "captcha",
+            "field_selector": "api2/anchor",
+            "alternative": true
+          }
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "selector_type": "xpath",
+          "field_selector": "//*[@class='saveCase']"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 4000
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "span.toastMessage",
+    "value": "has been created",
+    "name_suffix": "confirmation"
+  }
+}

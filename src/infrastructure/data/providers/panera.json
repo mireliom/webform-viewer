@@ -1,0 +1,79 @@
+{
+  "service_url": "https://panerabread.my.site.com/custhelp/s/createcase",
+  "biller_id": "pro_17218489350067198HURCZR7lvbw",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "first_name",
+          "field_type": "type",
+          "field_selector": "input[name='First_Name']"
+        },
+        {
+          "field_name": "last_name",
+          "field_type": "type",
+          "field_selector": "input[name='Last_Name']"
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[inputmode='email']"
+        },
+        {
+          "field_name": "topic",
+          "field_type": "click",
+          "field_selector": "#combobox-button-100",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "topic",
+          "field_type": "click",
+          "field_selector": "lightning-base-combobox-item[data-value='Subscription Services']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "topic",
+          "field_type": "click",
+          "field_selector": "#combobox-button-134",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "topic",
+          "field_type": "click",
+          "field_selector": "lightning-base-combobox-item[data-value='Unsubscribing']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "button[name='next1_button']"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "textarea.slds-textarea",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "button[name='next1_button']"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 4000
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div[data-region-name='content']",
+    "value": "Your case was submitted successfully.",
+    "name_suffix": "confirmation"
+  }
+}

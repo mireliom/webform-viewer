@@ -1,0 +1,57 @@
+{
+  "service_url": "https://www.zumba.com/en-US/support/contact",
+  "biller_id": "pro_16788835946985765gWPGnMf6NpK",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "first_name",
+          "field_type": "type",
+          "field_selector": "#first_name"
+        },
+        {
+          "field_name": "last_name",
+          "field_type": "type",
+          "field_selector": "#last_name"
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#email"
+        },
+        {
+          "field_name": "country",
+          "field_type": "select",
+          "field_selector": "#country",
+          "field_default_value": "US"
+        },
+        {
+          "field_name": "topic",
+          "field_type": "select",
+          "field_selector": "#subject",
+          "field_default_value": "4c6ae453-c2ac-4055-adf9-29450ad21f04"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#message",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "button[type='submit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "#success",
+    "value": "Request Submitted Successfully",
+    "name_suffix": "confirmation"
+  }
+}

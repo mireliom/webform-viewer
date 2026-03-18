@@ -1,0 +1,46 @@
+{
+  "service_url": "https://thecravory.com/pages/contact-us",
+  "biller_id": "pro_158860977118294932k5JsZS1bNa",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "input[name='contact[name]']"
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector":"input[name='contact[email]']"
+        },
+        {
+          "field_name": "source",
+          "field_type": "select",
+          "field_selector":"select[name='contact[How did you hear about us?]']",
+          "field_default_value": "Other"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "textarea[name='contact[body]']",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "div.justify-self-start > button"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div.banner.banner--success.justify-center",
+    "value": "Your message has been sent",
+    "name_suffix": "confirmation"
+  }
+}

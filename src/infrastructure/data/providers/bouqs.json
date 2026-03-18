@@ -1,0 +1,78 @@
+{
+  "service_url": "https://help.bouqs.com/hc/en-us/requests/new",
+  "biller_id": "pro_158861875406750542V2MZiDVVQM",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "submit_request",
+            "field_type": "select",
+            "field_selector": "#input_3",
+            "field_default_value": "Subscriptions"
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "reply_to",
+            "field_type": "type",
+            "field_selector": "#input_4",
+            "field_default_value": null
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "first_name",
+            "field_type": "type",
+            "field_selector": "#first_5",
+            "field_default_value": null
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "last_name",
+            "field_type": "type",
+            "field_selector": "#last_5",
+            "field_default_value": null
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "message",
+            "field_type": "message",
+            "field_selector": "#input_8",
+            "field_default_value": ""
+          }
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "submit",
+            "field_type": "click",
+            "field_selector": "#input_2"
+          }
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 5000
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "iframe_selector": "undefined",
+    "selector": ".thankyou-sub-text",
+    "value": "We received your message",
+    "name_suffix": "confirmation"
+  }
+}

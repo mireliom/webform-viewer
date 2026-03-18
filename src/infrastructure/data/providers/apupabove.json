@@ -1,0 +1,53 @@
+{
+  "service_url": "https://help.apupabove.com",
+  "biller_id": "pro_16820819473153925X63H8sQIbgp",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "contact",
+          "field_type": "click",
+          "field_selector": "#contact-modal-trigger",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "#name",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#email",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "comments",
+          "field_type": "message",
+          "field_selector": "#question",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "#contact-form-submit"
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 30000
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "p.top-articles-label",
+    "value": "Top Articles",
+    "name_suffix": "confirmation"
+  }
+}

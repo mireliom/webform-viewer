@@ -1,0 +1,46 @@
+{
+  "service_url": "https://www.vanidades.com/site/contacto/",
+  "biller_id": "pro_16788175078653886vdNafuTGEJm",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "first_name",
+          "field_type": "type",
+          "field_selector": "#contact_firstname"
+        },
+        {
+          "field_name": "last_name",
+          "field_type": "type",
+          "field_selector": "#contact_lastname"
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#contact_email"
+        },
+        {
+          "field_name": "subject",
+          "field_type": "select",
+          "field_selector": "#contact_subject",
+          "field_default_value": "Informaci\u00f3n General"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#contact_message",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "button[type='submit']"
+        }
+      ]
+    }
+  ]
+}

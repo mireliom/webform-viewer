@@ -1,0 +1,66 @@
+{
+  "service_url": "https://help.animaljam.com/hc/en-us/requests/new",
+  "biller_id": "pro_1676064868388747udqNIG7WcUd5",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#request_anonymous_requester_email",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "game",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_360028123014",
+          "field_default_value": "game_played_both"
+        },
+        {
+          "field_name": "username",
+          "field_type": "type",
+          "field_selector": "#request_custom_fields_360028129674",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#request_custom_fields_360028117473",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "member",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_81188108",
+          "field_default_value": "standard_account_status"
+        },
+        {
+          "field_name": "reason",
+          "field_type": "evaluate",
+          "field_selector": "#request_custom_fields_360028130534",
+          "field_default_value": "billing_concerns"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#request_description",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "footer > input[type='submit'][name='commit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div[data-test-id='notification'] > strong",
+    "value": "Your request was successfully submitted.",
+    "name_suffix": "confirmation"
+  }
+}

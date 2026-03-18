@@ -1,0 +1,52 @@
+{
+  "service_url": "https://www.beckettmedia.com/Contact-Us",
+  "biller_id": "pro_15886251504915001A6eD7MmAojr",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "type_of_inquiry",
+          "field_type": "click",
+          "field_selector": "[id='4b67346f-91c3-4662-9cb8-9f5b395721a6-3070103648093-input']"
+        },
+        {
+          "field_name": "type_of_inquiry_value",
+          "field_type": "click",
+          "field_selector": "[id='4b67346f-91c3-4662-9cb8-9f5b395721a6-3070103648093-listbox'] li:first-child"
+        },
+        {
+          "field_name": "account_number",
+          "field_type": "type",
+          "field_selector": "input[id='4b67346f-91c3-4662-9cb8-9f5b395721a6-3272703276046-input']"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "textarea[name='enquiry']",
+          "field_default_value": ""
+        },
+        {
+          "field_name": "captcha",
+          "field_type": "img_captcha",
+          "src_selector": "img[src='index.php?route=information/contact/captcha']",
+          "field_selector": "#captchaContact",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "input[type='submit'][name='Submit']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div.warning-page > div.text > p",
+    "value": "Your enquiry has been successfully sent to the store owner!",
+    "name_suffix": "confirmation"
+  }
+}

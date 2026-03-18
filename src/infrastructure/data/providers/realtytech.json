@@ -1,0 +1,115 @@
+{
+  "service_url": "https://realtytech.com/contact/",
+  "biller_id": "pro_16788077628257792u6b2utbOlE2",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "click",
+          "field_type": "click",
+          "field_selector": "#popmake-17292 > button"
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "first_name",
+            "field_type": "type",
+            "field_selector": "#input_1"
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "last_name",
+            "field_type": "type",
+            "field_selector": "#input_3"
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "reply_to",
+            "field_type": "type",
+            "field_selector": "#input_4"
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "contact_phone",
+            "field_type": "type",
+            "field_selector": "#input_5"
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "provider_id",
+            "field_type": "type",
+            "field_selector": "#input_6"
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "subject",
+            "field_type": "type",
+            "field_selector": "#input_7",
+            "field_default_value": "Cancel Subscription"
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "message",
+            "field_type": "message",
+            "field_selector": "#input_8",
+            "field_default_value": ""
+          }
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "captcha",
+            "field_type": "img_captcha",
+            "src_selector": "#input_9_captcha",
+            "field_selector": "#input_9"
+          }
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_type": "iframe",
+          "child": {
+            "field_name": "submit",
+            "field_type": "click",
+            "field_selector": "#input_2"
+          }
+        },
+        {
+          "field_name": "timer",
+          "field_type": "wait",
+          "time": 3000
+        },
+        {
+          "alternative": true,
+          "field_type": "iframe",
+          "child": {
+            "field_name": "captcha",
+            "field_type": "img_captcha",
+            "src_selector": "#input_5_captcha",
+            "field_selector": "#input_5"
+          }
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "iframe_selector": "#JotFormIFrame",
+    "selector": "div.form-all",
+    "value": "Your submission has been received.",
+    "name_suffix": "confirmation"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "service_url": "https://ngmdomsubs.nationalgeographic.com/pubs/NG/NGM/eCare_external_Contact_NEW.jsp?lsid=51530717023070781&vid=1&cds_mag_code=NGM&cslogin=N",
+  "biller_id": "pro_158455548001413878F6MdYCbe12",
+  "alias": true,
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "country",
+          "field_type": "select",
+          "field_selector": "select[name='cds_country']",
+          "field_default_value": "United States"
+        },
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "input[name='cds_name']"
+        },
+        {
+          "field_name": "street",
+          "field_type": "type",
+          "field_selector": "input[name='cds_address_1']"
+        },
+        {
+          "field_name": "city",
+          "field_type": "type",
+          "field_selector": "input[name='cds_city']"
+        },
+        {
+          "field_name": "state",
+          "field_type": "select",
+          "field_selector": "select[name='cds_state']"
+        },
+        {
+          "field_name": "zip_code",
+          "field_type": "type",
+          "field_selector": "input[name='cds_zip']"
+        },
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "input[name='cds_email']"
+        },
+        {
+          "field_name": "product",
+          "field_type": "select",
+          "field_selector": "#cds_keyed_email_mag_code",
+          "field_default_value": "NGM"
+        },
+        {
+          "field_name": "subject",
+          "field_type": "select",
+          "field_selector": "select[name='cds_email_subject']",
+          "field_default_value": "9"
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "#cds_email_message",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "input[type='submit'][value='Contact Us']"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "div.widget-body-white",
+    "value": "Your message has been submitted to a Customer Service Representative who will send a reply shortly.",
+    "name_suffix": "confirmation"
+  }
+}

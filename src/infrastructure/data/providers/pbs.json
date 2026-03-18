@@ -1,0 +1,48 @@
+{
+  "service_url": "https://help.pbs.org/support/tickets/new",
+  "biller_id": "pro_1722341993965935EU0GAlugJz5l",
+  "pages": [
+    {
+      "fields": [
+        {
+          "field_name": "reply_to",
+          "field_type": "type",
+          "field_selector": "#helpdesk_ticket_email",
+          "field_default_value": null
+        },
+        {
+          "field_name": "subject",
+          "field_type": "type",
+          "field_selector": "#helpdesk_ticket_subject",
+          "field_default_value": "Cancel Subscription"
+        },
+        {
+          "field_name": "full_name",
+          "field_type": "type",
+          "field_selector": "input[name='helpdesk_ticket[name]']",
+          "field_default_value": null
+        },
+        {
+          "field_name": "message",
+          "field_type": "message",
+          "field_selector": "div.redactor_editor > p",
+          "field_default_value": ""
+        },
+        {
+          "field_type": "screenshot",
+          "name_suffix": "data"
+        },
+        {
+          "field_name": "submit",
+          "field_type": "click",
+          "field_selector": "#helpdesk_ticket_submit"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "selector": "#notice",
+    "value": "Your ticket has been created",
+    "name_suffix": "confirmation"
+  }
+}
