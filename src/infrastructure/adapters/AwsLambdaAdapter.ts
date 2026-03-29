@@ -9,19 +9,31 @@ export class AwsLambdaAdapter implements LambdaPort {
   private client: LambdaClient;
 
   constructor() {
+    console.log(
+      "🚀 ~ AwsLambdaAdapter.ts ~ AwsLambdaAdapter ~ constructor ~  process.env.AWS_ACCESS_KEY_ID:",
+      process.env.AWS_ACCESS_KEY_ID,
+    );
     this.client = new LambdaClient({
       region: process.env.AWS_REGION || "us-east-1",
+      credentials: {
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID || "",
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY || "",
+      },
     });
   }
 
   async invokeProviderLambda(
     request: ExecutionRequest,
   ): Promise<ExecutionResponse> {
+    console.log(
+      "🚀 ~ AwsLambdaAdapter.ts ~ AwsLambdaAdapter ~ invokeProviderLambda ~ request:",
+      request,
+    );
     const command = new InvokeCommand({
       FunctionName:
         process.env.NEXT_PUBLIC_LAMBDA_NAME || process.env.EXISTING_LAMBDA_NAME,
       /*InvocationType: "Event",*/
-      Payload: Buffer.from(JSON.stringify(request)),
+      Payload: Buffer.from(JSON.stringify(request.payload)),
     });
 
     try {

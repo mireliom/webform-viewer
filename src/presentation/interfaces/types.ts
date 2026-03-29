@@ -1,6 +1,7 @@
 import { ReactElement } from "react";
 
 export interface ProviderTemplate {
+  id: string;
   filename: string;
   providerName: string;
   billerId: string;

@@ -9,6 +9,7 @@ import RunnerStats from "@components/RunnerStats";
 import ProvidersTable from "@components/ProvidersTable";
 import OutputConsole from "@components/OutputConsole";
 import PayloadModal from "@components/PayloadModal";
+import { ExecutionController } from "@/infrastructure/controllers/ExecutionController";
 
 export default function LambdaRunnerPage() {
   // Global App State
@@ -50,11 +51,20 @@ export default function LambdaRunnerPage() {
     setLogs([]);
     setIsStreaming(false);
     try {
-      const res = await fetch("/api/execute", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(buildFinalPayload(provider.specificConfig)),
-      });
+      // const res = await fetch("/api/execute", {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify(buildFinalPayload(provider.specificConfig)),
+      // });
+
+      const res = await ExecutionController.handleClient(
+        {
+          providerId: provider.id,
+          providerName: provider.providerName,
+          payload: buildFinalPayload(provider.specificConfig),
+        },
+      );
+      console.log("🚀 ~ page.tsx ~ handleQuickExecute ~ res:", res);
       const data = await res.json();
       setResponse(data);
       // Once we have the response and the requestId, start streaming logs

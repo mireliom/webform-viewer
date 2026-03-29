@@ -27,6 +27,7 @@ export default function OutputConsole({
   logs,
   isStreaming,
 }: OutputConsoleProps) {
+  console.log("🚀 ~ OutputConsole.tsx ~ OutputConsole ~ response:", response);
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -35,10 +36,10 @@ export default function OutputConsole({
     const list = [];
 
     // Final/Global Screenshot
-    if (response?.data?.screenshot?.screenshot) {
+    if (response?.data?.artifacts?.final_screenshot) {
       list.push({
         name: "Final Confirmation",
-        data: response.data.screenshot.screenshot,
+        data: response.data.artifacts.final_screenshot,
       });
     }
 
