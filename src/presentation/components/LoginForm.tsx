@@ -186,7 +186,7 @@ export default function LoginForm() {
 
         {/* Footer */}
         <p className="text-center text-sm text-muted-foreground mt-6">
-          Don't have an account?{" "}
+          Don&#39;t have an account?{" "}
           <button
             type="button"
             className="font-medium text-foreground hover:underline"

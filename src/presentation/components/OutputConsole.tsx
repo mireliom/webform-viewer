@@ -31,22 +31,34 @@ export default function OutputConsole({
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Logic to combine all available screenshots
   const screenshots = (() => {
     const list = [];
 
-    // Final/Global Screenshot
-    if (response?.data?.artifacts?.final_screenshot) {
+    // 1. Intentamos parsear el body si viene como string (formato AWS Proxy)
+    let parsedBody = response;
+    if (typeof response?.body === "string") {
+      try {
+        parsedBody = JSON.parse(response.body);
+      } catch (e) {
+        console.error("Error parsing response body:", e);
+      }
+    }
+
+    // 2. Buscar Screenshot Final (basado en tu JSON real)
+    if (parsedBody?.artifacts?.final_screenshot) {
       list.push({
         name: "Final Confirmation",
-        data: response.data.artifacts.final_screenshot,
+        data: parsedBody.artifacts.final_screenshot,
       });
     }
 
-    // Intermediate/Flow Screenshots
+    // 3. Buscar Screenshots Intermedias
+    // Ajustado para buscar tanto en la ruta vieja como en posibles artifacts adicionales
     const intermediates =
-      response?.data?.screenshot?.automationResult?.formResult
-        ?.intermediate_screenshots || [];
+      parsedBody?.data?.screenshot?.automationResult?.formResult
+        ?.intermediate_screenshots ||
+      parsedBody?.artifacts?.intermediate_screenshots ||
+      [];
 
     return [...list, ...intermediates];
   })();
