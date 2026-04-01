@@ -31,7 +31,7 @@ const GRAPHQL_ENDPOINT =
 
 // Keys that MUST be stripped out before sending to production API
 const DUMMY_KEYS_TO_REMOVE = [
-  "id",
+  /* "id",*/
   "env",
   "provider_name",
   "username",
@@ -151,10 +151,10 @@ export function ExecutePage() {
     // 1. Get the object
     let rawConfig = provider.isEdited
       ? provider.specificConfig
-      : buildFinalPayload(provider.specificConfig);
+      : (buildFinalPayload(provider.specificConfig) as Record<string, any>);
 
     // 2. Reconstruct the object to force visual order
-    const orderedConfig: any = {};
+    const orderedConfig: Record<string, any> = {};
 
     // First, insert the base keys in the defined order
     BASE_KEYS_ORDER.forEach((key) => {
@@ -242,7 +242,7 @@ export function ExecutePage() {
       const mergeResponse = await sendRequest<any>(
         `/webform-settings/${providerToMerge.filename}`,
         {
-          method: "POST",
+          method: "PATCH",
           body: JSON.stringify(payloadToProd),
         },
       );

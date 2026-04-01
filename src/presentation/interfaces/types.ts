@@ -7,6 +7,7 @@ export interface ProviderTemplate {
   billerId: string;
   serviceUrl: string;
   specificConfig: Record<string, unknown>;
+  isEdited?: boolean;
 }
 
 export interface StatusMeta {
