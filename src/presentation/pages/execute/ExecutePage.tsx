@@ -31,7 +31,6 @@ const GRAPHQL_ENDPOINT =
 
 // Keys that MUST be stripped out before sending to production API
 const DUMMY_KEYS_TO_REMOVE = [
-  /* "id",*/
   "env",
   "provider_name",
   "username",
@@ -57,7 +56,12 @@ const DUMMY_KEYS_TO_REMOVE = [
 ];
 
 // Keys to force a visual order when editing
-const BASE_KEYS_ORDER = [...DUMMY_KEYS_TO_REMOVE, "biller_id", "service_url"];
+const BASE_KEYS_ORDER = [
+  "id",
+  ...DUMMY_KEYS_TO_REMOVE,
+  "biller_id",
+  "service_url",
+];
 
 // GraphQL Mutation to delete the draft after successful merge
 const DELETE_DRAFT_MUTATION = `
