@@ -5,4 +5,6 @@ export interface IProviderTemplate {
   billerId: string;
   serviceUrl: string;
   specificConfig: Record<string, any>;
+  isEdited?: boolean;
+  updatedAt?: string;
 }

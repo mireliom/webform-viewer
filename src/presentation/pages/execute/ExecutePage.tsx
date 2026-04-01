@@ -1,51 +1,112 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { IProviderTemplate } from "@/domain/entities/provider/provider-model";
 import { IExecutionResult } from "@/domain/entities/execution/execution-model";
 import { ProviderController } from "@/infrastructure/controllers/provider-controller";
 import { ExecutionController } from "@/infrastructure/controllers/execution-controller";
-
 import { getStatusMeta, buildFinalPayload } from "@/presentation/utils/utils";
+import { saveProviderDraft } from "@/infrastructure/http/graphql-client";
+import { sendRequest } from "@/infrastructure/http/api-client";
+
 import RunnerNavbar from "@components/RunnerNavbar";
 import RunnerStats from "@components/RunnerStats";
 import ProvidersTable from "@components/ProvidersTable";
 import OutputConsole from "@components/OutputConsole";
 import PayloadModal from "@components/PayloadModal";
 
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@components/ui/alert-dialog";
+
+const GRAPHQL_ENDPOINT =
+  "https://oaf42l7xx5atti3snt3plejg4y.appsync-api.us-east-1.amazonaws.com/graphql";
+
+// Keys that MUST be stripped out before sending to production API
+const DUMMY_KEYS_TO_REMOVE = [
+  "id",
+  "env",
+  "provider_name",
+  "username",
+  "account_number",
+  "partner",
+  "first_name",
+  "last_name",
+  "full_name",
+  "password",
+  "contact_phone",
+  "reply_to",
+  "shark_email",
+  "short_code",
+  "email",
+  "last_4",
+  "shark_name",
+  "zip_code",
+  "street",
+  "state",
+  "city",
+  "customer_dob",
+  "cancel_method_order",
+];
+
+// Keys to force a visual order when editing
+const BASE_KEYS_ORDER = [...DUMMY_KEYS_TO_REMOVE, "biller_id", "service_url"];
+
+// GraphQL Mutation to delete the draft after successful merge
+const DELETE_DRAFT_MUTATION = `
+  mutation DeleteProviderDraft($input: DeleteProviderDraftInput!) {
+    deleteProviderDraft(input: $input) {
+      id
+    }
+  }
+`;
+
 export function ExecutePage() {
-  // Global App State
   const [providers, setProviders] = useState<IProviderTemplate[]>([]);
   const [response, setResponse] = useState<IExecutionResult | null>(null);
   const [loading, setLoading] = useState(false);
   const [activeProvider, setActiveProvider] = useState<string | null>(null);
   const [search, setSearch] = useState("");
 
-  // Modal State
+  // Modal & Edit State
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editableJson, setEditableJson] = useState("");
+  const [originalJson, setOriginalJson] = useState("");
   const [editingFilename, setEditingFilename] = useState<string | null>(null);
   const [selectedProviderName, setSelectedProviderName] = useState("");
+  const [isSavingDraft, setIsSavingDraft] = useState(false);
 
-  // CloudWatch logs
+  // Merge & Dialog State
+  const [isMergeAlertOpen, setIsMergeAlertOpen] = useState(false);
+  const [providerToMerge, setProviderToMerge] =
+    useState<IProviderTemplate | null>(null);
+  const [isMerging, setIsMerging] = useState(false);
+
+  // Logs state
   const [logs, setLogs] = useState<string[]>([]);
   const [isStreaming, setIsStreaming] = useState(false);
 
-  // Initial Data Fetch using the Hexagonal Controller
-  useEffect(() => {
-    const fetchProviders = async () => {
-      const res = await ProviderController.getAllProviders();
-      // Enforcing the response.data.data access pattern from the skill
-      if (res.success && res.data?.data) {
-        setProviders(res.data.data);
-      } else {
-        console.error("Failed to fetch providers", res.error);
-      }
-    };
-    fetchProviders();
+  // Fetch providers logic wrapped in useCallback to reuse it after saving
+  const fetchProviders = useCallback(async () => {
+    const res = await ProviderController.getAllProviders();
+    if (res.success && res.data?.data) {
+      setProviders(res.data.data);
+    } else {
+      console.error("Failed to fetch providers", res.error);
+    }
   }, []);
 
-  // Execution Handler
+  useEffect(() => {
+    fetchProviders();
+  }, [fetchProviders]);
+
   const handleQuickExecute = async (provider: IProviderTemplate) => {
     setActiveProvider(provider.filename);
     setLoading(true);
@@ -54,39 +115,29 @@ export function ExecutePage() {
     setIsStreaming(false);
 
     try {
-      const payload = buildFinalPayload(provider.specificConfig);
+      // Use the config as it is (if it's a draft, it already has the base payload)
+      const payload = provider.isEdited
+        ? provider.specificConfig
+        : buildFinalPayload(provider.specificConfig);
       const res = await ExecutionController.execute(payload);
 
-      if (!res.success || !res.data?.data) {
+      if (!res.success || !res.data?.data)
         throw new Error(res.error || "Execution failed");
-      }
 
       const executionData = res.data.data;
-      console.log("🚀 ~ handleQuickExecute ~ executionData:", executionData);
       setResponse(executionData.data);
 
-      // NUEVA LÓGICA DE LOGS SIN ENDPOINTS
       if (executionData.requestId) {
         setIsStreaming(true);
-
-        // Consumimos el generador asíncrono del controlador
         const logStream = ExecutionController.getLogStream(
           executionData.requestId,
         );
-
         for await (const log of logStream) {
           if (log?.done) {
             setIsStreaming(false);
             break;
           }
-          if (log?.error) {
-            setLogs((prev) => [...prev, `[AWS ERROR] ${log.error}`]);
-            setIsStreaming(false);
-            break;
-          }
-          if (log?.message) {
-            setLogs((prev) => [...prev, log.message]);
-          }
+          if (log?.message) setLogs((prev) => [...prev, log.message]);
         }
       }
     } catch (e: any) {
@@ -96,27 +147,146 @@ export function ExecutePage() {
     }
   };
 
-  // Modal Handlers
   const handleOpenEdit = (provider: IProviderTemplate) => {
-    setEditableJson(
-      JSON.stringify(buildFinalPayload(provider.specificConfig), null, 2),
-    );
+    // 1. Get the object
+    let rawConfig = provider.isEdited
+      ? provider.specificConfig
+      : buildFinalPayload(provider.specificConfig);
+
+    // 2. Reconstruct the object to force visual order
+    const orderedConfig: any = {};
+
+    // First, insert the base keys in the defined order
+    BASE_KEYS_ORDER.forEach((key) => {
+      if (key in rawConfig) {
+        orderedConfig[key] = rawConfig[key];
+      }
+    });
+
+    // Next, insert the rest of the keys NOT in the base
+    Object.keys(rawConfig).forEach((key) => {
+      if (!BASE_KEYS_ORDER.includes(key)) {
+        orderedConfig[key] = rawConfig[key];
+      }
+    });
+
+    // 3. Convert to string with indentation
+    const jsonString = JSON.stringify(orderedConfig, null, 2);
+
+    setEditableJson(jsonString);
+    setOriginalJson(jsonString);
     setEditingFilename(provider.filename);
     setSelectedProviderName(provider.providerName);
     setIsModalOpen(true);
   };
 
-  const handleSaveEdit = () => {
-    try {
-      const parsed = JSON.parse(editableJson);
-      setProviders((prev) =>
-        prev.map((p) =>
-          p.filename === editingFilename ? { ...p, specificConfig: parsed } : p,
-        ),
-      );
+  const handleSaveEdit = async () => {
+    if (editableJson === originalJson) {
       setIsModalOpen(false);
-    } catch {
-      alert("Invalid JSON format");
+      return;
+    }
+
+    setIsSavingDraft(true);
+    try {
+      const parsedConfig = JSON.parse(editableJson);
+      const currentProvider = providers.find(
+        (p) => p.filename === editingFilename,
+      );
+
+      const result = await saveProviderDraft(
+        {
+          id: editingFilename!,
+          providerName: selectedProviderName,
+          billerId: currentProvider?.billerId || "N/A",
+          config: parsedConfig,
+        },
+        GRAPHQL_ENDPOINT,
+      );
+
+      if (result) {
+        // Refresh the list from the source to ensure everything is synced
+        await fetchProviders();
+        setIsModalOpen(false);
+      }
+    } catch (error) {
+      console.error("Error saving draft:", error);
+      alert("Error saving to DB. Check JSON format.");
+    } finally {
+      setIsSavingDraft(false);
+    }
+  };
+
+  // Triggers the confirmation dialog
+  const handleMergeToProduction = (provider: IProviderTemplate) => {
+    setProviderToMerge(provider);
+    setIsMergeAlertOpen(true);
+  };
+
+  // Executes the actual merge after user confirms
+  const handleConfirmMerge = async () => {
+    if (!providerToMerge) return;
+    setIsMerging(true);
+
+    try {
+      // 1. Clone the specific config so we don't mutate state directly
+      const payloadToProd = { ...providerToMerge.specificConfig };
+
+      // 2. Strip out all dummy execution keys before sending to prod
+      DUMMY_KEYS_TO_REMOVE.forEach((key) => {
+        if (key in payloadToProd) {
+          delete payloadToProd[key];
+        }
+      });
+
+      // 3. Call API Gateway to update Production using the custom api-client
+      const mergeResponse = await sendRequest<any>(
+        `/webform-settings/${providerToMerge.filename}`,
+        {
+          method: "POST",
+          body: JSON.stringify(payloadToProd),
+        },
+      );
+
+      if (!mergeResponse.success) {
+        throw new Error(mergeResponse.error || "Failed to update production");
+      }
+
+      console.log("Merge successful in Production:", mergeResponse.data);
+
+      // 4. If Prod update is successful, delete the Draft from AppSync
+      try {
+        await fetch(GRAPHQL_ENDPOINT, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "mbv2", // Ensure this matches your AppSync auth
+          },
+          body: JSON.stringify({
+            query: DELETE_DRAFT_MUTATION,
+            variables: {
+              input: {
+                id: providerToMerge.filename,
+              },
+            },
+          }),
+        });
+        console.log("Draft successfully deleted from AppSync.");
+      } catch (graphqlError) {
+        console.error(
+          "Prod updated, but failed to delete draft from AppSync:",
+          graphqlError,
+        );
+      }
+
+      // 5. Sync local state to reflect the deletion
+      await fetchProviders();
+    } catch (error) {
+      console.error("Error merging to prod:", error);
+      alert("Error updating production. Check the console for details.");
+    } finally {
+      setIsMerging(false);
+      setIsMergeAlertOpen(false);
+      setProviderToMerge(null);
     }
   };
 
@@ -139,6 +309,7 @@ export function ExecutePage() {
             loading={loading}
             onOpenEdit={handleOpenEdit}
             onQuickExecute={handleQuickExecute}
+            onMerge={handleMergeToProduction}
           />
           <OutputConsole
             response={response}
@@ -156,7 +327,35 @@ export function ExecutePage() {
         editableJson={editableJson}
         onJsonChange={setEditableJson}
         onSave={handleSaveEdit}
+        isSaving={isSavingDraft}
       />
+
+      {/* Merge Confirmation Dialog */}
+      <AlertDialog open={isMergeAlertOpen} onOpenChange={setIsMergeAlertOpen}>
+        <AlertDialogContent className="bg-gray-50">
+          <AlertDialogHeader>
+            <AlertDialogTitle>Are you sure you want to merge?</AlertDialogTitle>
+            <AlertDialogDescription>
+              This will update the configuration for{" "}
+              <strong>{providerToMerge?.providerName}</strong> in production.
+              Execution metadata will be automatically stripped before sending.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel disabled={isMerging}>Cancel</AlertDialogCancel>
+            <AlertDialogAction
+              onClick={(e) => {
+                e.preventDefault();
+                handleConfirmMerge();
+              }}
+              disabled={isMerging}
+              className="bg-emerald-600 hover:bg-emerald-700 text-white"
+            >
+              {isMerging ? "Merging to Prod..." : "Confirm & Merge"}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   );
 }

@@ -2,6 +2,7 @@
 const nextConfig = {
   // Configures Next.js to produce a static export (the 'out' directory)
   output: "export",
+  trailingSlash: true,
 
   images: {
     unoptimized: true,

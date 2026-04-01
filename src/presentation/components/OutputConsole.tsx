@@ -34,7 +34,6 @@ export default function OutputConsole({
   const screenshots = (() => {
     const list = [];
 
-    // 1. Intentamos parsear el body si viene como string (formato AWS Proxy)
     let parsedBody = response;
     if (typeof response?.body === "string") {
       try {
@@ -44,7 +43,6 @@ export default function OutputConsole({
       }
     }
 
-    // 2. Buscar Screenshot Final (basado en tu JSON real)
     if (parsedBody?.artifacts?.final_screenshot) {
       list.push({
         name: "Final Confirmation",
@@ -52,8 +50,6 @@ export default function OutputConsole({
       });
     }
 
-    // 3. Buscar Screenshots Intermedias
-    // Ajustado para buscar tanto en la ruta vieja como en posibles artifacts adicionales
     const intermediates =
       parsedBody?.data?.screenshot?.automationResult?.formResult
         ?.intermediate_screenshots ||

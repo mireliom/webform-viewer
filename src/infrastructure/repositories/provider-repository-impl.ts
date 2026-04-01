@@ -2,33 +2,66 @@ import { ProviderRepository } from "@/domain/entities/provider/provider-reposito
 import { IApiResponse, IBackendResponse } from "@/domain/shared/api-response";
 import { IProviderTemplate } from "@/domain/entities/provider/provider-model";
 import { sendRequest } from "../http/api-client";
+import { graphqlfetch } from "@/infrastructure/http/graphql-client";
+
+const GRAPHQL_ENDPOINT =
+  "https://oaf42l7xx5atti3snt3plejg4y.appsync-api.us-east-1.amazonaws.com/graphql";
+
+const LIST_DRAFTS_QUERY = `
+  query ListProviderDrafts {
+    listProviderDrafts {
+      items {
+        id
+        config        
+        updatedAt
+      }
+    }
+  }
+`;
 
 export class ProviderRepositoryImpl implements ProviderRepository {
   async getProviders(): Promise<
     IApiResponse<IBackendResponse<IProviderTemplate[]>>
   > {
-    const response = await sendRequest<any>("/webform-settings");
+    const [prodResponse, draftsData] = await Promise.all([
+      sendRequest<any>("/webform-settings"),
+      graphqlfetch<any>({
+        query: LIST_DRAFTS_QUERY,
+        queryResult: "listProviderDrafts",
+        variables: {},
+        apiUrl: GRAPHQL_ENDPOINT,
+      }),
+    ]);
 
-    if (!response.success || !response.data.data) {
+    if (!prodResponse.success || !prodResponse.data.data) {
       return {
         success: false,
         data: { data: [] },
-        error: response.error || "No data received",
+        error: "No production data",
       };
     }
 
-    const rawList = response.data.data.webform_settings;
-
-    if (!Array.isArray(rawList)) {
-      return {
-        success: false,
-        data: { data: [] },
-        error: "Invalid data format",
-      };
-    }
+    const rawList = prodResponse.data.data.webform_settings;
+    const drafts = draftsData?.items || [];
 
     const mappedProviders: IProviderTemplate[] = rawList.map((item: any) => {
-      // Extract a clean name from the service_url for the UI
+      // 1. Identificar si hay borrador
+      const draft = drafts.find((d: any) => d.id === item.id);
+
+      // 2. Normalizar la configuración (Asegurar que sea Objeto)
+      let finalConfig = draft ? draft.config : item;
+
+      // RECURSIVE PARSE: AppSync a veces devuelve el JSON como string, o doble-stringificado
+      while (typeof finalConfig === "string") {
+        try {
+          finalConfig = JSON.parse(finalConfig);
+        } catch (e) {
+          console.error("Error final parsing config", e);
+          break;
+        }
+      }
+
+      // 3. Generar nombre de visualización
       let displayName = "PROVIDER";
       try {
         if (item.service_url) {
@@ -43,20 +76,15 @@ export class ProviderRepositoryImpl implements ProviderRepository {
       }
 
       return {
-        // Unique key for the table rows
         filename: item.id,
-        // Display name in the first column
         providerName: displayName,
-        // Used in the second column and for filtering in ProvidersTable
         billerId: item.biller_id || "N/A",
-        // Full object stored for the visual editor/execution
-        specificConfig: item,
+        specificConfig: finalConfig,
+        isEdited: !!draft,
+        updatedAt: draft?.updatedAt,
       } as IProviderTemplate;
     });
 
-    return {
-      success: true,
-      data: { data: mappedProviders },
-    };
+    return { success: true, data: { data: mappedProviders } };
   }
 }

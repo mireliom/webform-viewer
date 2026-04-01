@@ -46,6 +46,10 @@ export class ExecutionRepositoryImpl implements ExecutionRepository {
       });
 
       const response = await this.lambdaClient.send(command);
+      console.log(
+        "🚀 ~ ExecutionRepositoryImpl ~ executeLambda ~ response:",
+        response,
+      );
 
       if (response.Payload) {
         const resultString = new TextDecoder().decode(response.Payload);

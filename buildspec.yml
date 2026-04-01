@@ -1,0 +1,58 @@
+version: 0.2
+
+env:
+  variables:
+    S3_BUCKET: "webform-viewer-static"
+    DISTRIBUTION_ID: "E3P2HE3C16F9TB"
+
+phases:
+  install:
+    commands:
+      - echo "Build started on $(date)"
+      - echo "Node version: $(node -v)"
+
+      - corepack enable
+      - yarn set version stable
+      - echo "Yarn version: $(yarn -v)"
+
+      # Instalar dependencias
+      - echo "Installing dependencies..."
+      - yarn install --immutable || yarn install
+
+  build:
+    commands:
+      - echo "Building Next.js app..."
+      - yarn build
+
+      - echo "Exporting static app..."
+      - yarn export
+
+      - echo "Build completed on $(date)"
+
+  post_build:
+    commands:
+      - echo "Deploying to S3..."
+
+      # Assets con cache largo (JS, CSS, etc.)
+      - aws s3 sync out/ s3://$S3_BUCKET \
+        --delete \
+        --exclude "index.html" \
+        --cache-control "public, max-age=31536000, immutable"
+
+      # index.html sin cache (clave)
+      - aws s3 cp out/index.html s3://$S3_BUCKET/index.html \
+        --cache-control "no-cache"
+
+      - echo "Invalidating CloudFront cache..."
+
+      - aws cloudfront create-invalidation \
+        --distribution-id $DISTRIBUTION_ID \
+        --paths "/*"
+
+      - echo "Post build completed on $(date)"
+
+cache:
+  paths:
+    - 'node_modules/**/*'
+    - '/root/.cache/yarn/**/*'
+    - '.next/cache/**/*'
